@@ -46,26 +46,13 @@ export function ProfileHeader() {
   return (
     <div className="w-full">
       {/* Banner Image with RESEARCH text */}
-      <div className="relative w-full h-36 md:h-48 bg-gradient-to-r from-zinc-900 via-zinc-800 to-zinc-900 overflow-hidden">
-        {/* Distressed RESEARCH text */}
-        <div className="absolute inset-0 flex items-center justify-center">
-          <h2 
-            className="text-5xl md:text-7xl lg:text-8xl font-black tracking-wider text-white/90 select-none"
-            style={{
-              fontFamily: 'Impact, Haettenschweiler, Arial Narrow Bold, sans-serif',
-              textShadow: '2px 2px 4px rgba(0,0,0,0.5)',
-              letterSpacing: '0.1em',
-            }}
-          >
-            RESEARCH
-          </h2>
-        </div>
-        {/* Noise overlay for distressed effect */}
-        <div 
-          className="absolute inset-0 opacity-30"
-          style={{
-            backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E")`,
-          }}
+      <div className="relative w-full h-36 md:h-48 overflow-hidden">
+        <Image
+          src="/images/banner.jpg"
+          alt="Research Banner"
+          fill
+          className="object-cover"
+          priority
         />
       </div>
 
@@ -122,7 +109,7 @@ export function ProfileHeader() {
           </span>
           <span className="flex items-center gap-1">
             <Calendar className="w-4 h-4" />
-            Founder, Absalex Labs
+            Joined January 2026
           </span>
         </div>
 
