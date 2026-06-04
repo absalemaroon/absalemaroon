@@ -5,16 +5,17 @@
   --font-mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, monospace;
 
   --color-background: #000000;
-  --color-foreground: #ffffff;
-  --color-muted: #a1a1aa;
-  --color-muted-foreground: #71717a;
-  --color-border: #27272a;
-  --color-card: #09090b;
-  --color-card-foreground: #fafafa;
-  --color-accent: #18181b;
-  --color-accent-foreground: #fafafa;
+  --color-foreground: #e7e9ea;
+  --color-muted: #71767b;
+  --color-muted-foreground: #536471;
+  --color-border: #2f3336;
+  --color-card: #16181c;
+  --color-card-foreground: #e7e9ea;
+  --color-accent: #1d1f23;
+  --color-accent-foreground: #e7e9ea;
+  --color-primary: #1d9bf0;
 
-  --radius: 0.5rem;
+  --radius: 1rem;
 }
 
 @layer base {
@@ -31,45 +32,23 @@
   }
 }
 
-/* Subtle grid texture */
-.bg-grid-texture {
-  background-image: 
-    linear-gradient(to right, rgba(39, 39, 42, 0.3) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(39, 39, 42, 0.3) 1px, transparent 1px);
-  background-size: 60px 60px;
+/* Hide scrollbar for tab navigation */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
 }
 
 /* Premium card hover effect */
 .card-hover {
-  transition: all 0.3s ease;
+  transition: all 0.2s ease;
 }
 
 .card-hover:hover {
-  background-color: rgba(24, 24, 27, 0.8);
-  border-color: rgba(63, 63, 70, 0.5);
-  transform: translateY(-2px);
-}
-
-/* Navigation link styling */
-.nav-link {
-  position: relative;
-  transition: color 0.2s ease;
-}
-
-.nav-link::after {
-  content: '';
-  position: absolute;
-  bottom: -4px;
-  left: 0;
-  width: 0;
-  height: 1px;
-  background-color: var(--color-foreground);
-  transition: width 0.3s ease;
-}
-
-.nav-link:hover::after,
-.nav-link.active::after {
-  width: 100%;
+  background-color: rgba(255, 255, 255, 0.03);
 }
 
 /* Scrollbar styling */
@@ -87,7 +66,7 @@
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--color-muted-foreground);
+  background: var(--color-muted);
 }
 
 /* Text balance for headlines */
@@ -97,5 +76,27 @@
 
 /* Selection styling */
 ::selection {
-  background-color: rgba(255, 255, 255, 0.15);
+  background-color: rgba(29, 155, 240, 0.3);
+}
+
+/* Animation */
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-in {
+  animation: fade-in 0.2s ease-out;
+}
+
+/* Link styling */
+a {
+  color: inherit;
+  text-decoration: none;
 }

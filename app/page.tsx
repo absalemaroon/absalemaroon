@@ -1,14 +1,15 @@
 "use client";
 
 import { useState } from "react";
-import { ProfileSidebar } from "@/components/profile-sidebar";
-import { Navigation } from "@/components/navigation";
+import { ProfileHeader } from "@/components/profile-header";
+import { TabNavigation } from "@/components/tab-navigation";
 import { AboutSection } from "@/components/sections/about-section";
 import { ResearchSection } from "@/components/sections/research-section";
 import { ProjectsSection } from "@/components/sections/projects-section";
 import { CertificatesSection } from "@/components/sections/certificates-section";
 import { WritingSection } from "@/components/sections/writing-section";
 import { ContactSection } from "@/components/sections/contact-section";
+import { ArrowLeft } from "lucide-react";
 
 export default function Home() {
   const [activeSection, setActiveSection] = useState("about");
@@ -33,62 +34,45 @@ export default function Home() {
   };
 
   return (
-    <div className="min-h-screen bg-background bg-grid-texture">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 lg:py-16">
-        {/* Mobile Header */}
-        <header className="lg:hidden mb-8">
-          <ProfileSidebar />
-          <div className="mt-8">
-            <Navigation
-              activeSection={activeSection}
-              onSectionChange={setActiveSection}
-            />
+    <div className="min-h-screen bg-background">
+      {/* Twitter-style container */}
+      <div className="max-w-2xl mx-auto border-x border-border min-h-screen">
+        {/* Top Header Bar */}
+        <header className="sticky top-0 z-50 bg-background/80 backdrop-blur-md border-b border-border">
+          <div className="flex items-center gap-6 px-4 py-3">
+            <button className="p-2 -ml-2 rounded-full hover:bg-white/10 transition-colors">
+              <ArrowLeft className="w-5 h-5 text-foreground" />
+            </button>
+            <div>
+              <h2 className="font-bold text-lg text-foreground">Absalem Aroon</h2>
+              <p className="text-xs text-muted">Blockchain & DeFi Researcher</p>
+            </div>
           </div>
         </header>
 
-        {/* Desktop Two-Column Layout */}
-        <div className="flex flex-col lg:flex-row gap-12 lg:gap-16">
-          {/* Left Sidebar - Profile */}
-          <aside className="hidden lg:block lg:w-80 lg:flex-shrink-0">
-            <div className="sticky top-16 space-y-8">
-              <ProfileSidebar />
-              <div className="pt-4 border-t border-border">
-                <p className="text-sm text-muted leading-relaxed">
-                  Researching decentralized systems, blockchain protocols, trust 
-                  infrastructure, and emerging Web3 ecosystems.
-                </p>
-              </div>
-            </div>
-          </aside>
+        {/* Profile Header with Banner */}
+        <ProfileHeader />
 
-          {/* Right Content Area */}
-          <main className="flex-1 min-w-0">
-            {/* Desktop Navigation */}
-            <nav className="hidden lg:block mb-12 pb-8 border-b border-border">
-              <Navigation
-                activeSection={activeSection}
-                onSectionChange={setActiveSection}
-              />
-            </nav>
+        {/* Tab Navigation */}
+        <TabNavigation
+          activeSection={activeSection}
+          onSectionChange={setActiveSection}
+        />
 
-            {/* Dynamic Content */}
-            <div className="animate-in fade-in duration-300">
-              {renderSection()}
-            </div>
+        {/* Content Area */}
+        <main className="min-h-[50vh]">
+          <div className="animate-in fade-in duration-200">
+            {renderSection()}
+          </div>
+        </main>
 
-            {/* Footer */}
-            <footer className="mt-16 pt-8 border-t border-border">
-              <div className="flex flex-col sm:flex-row justify-between items-center gap-4">
-                <p className="text-sm text-muted-foreground">
-                  {new Date().getFullYear()} Absalem Aroon. All rights reserved.
-                </p>
-                <p className="text-sm text-muted-foreground">
-                  Founder, Absalex Labs
-                </p>
-              </div>
-            </footer>
-          </main>
-        </div>
+        {/* Footer */}
+        <footer className="border-t border-border py-6 px-4">
+          <div className="text-center text-sm text-muted">
+            <p>{new Date().getFullYear()} Absalem Aroon. All rights reserved.</p>
+            <p className="mt-1">Founder, Absalex Labs</p>
+          </div>
+        </footer>
       </div>
     </div>
   );
