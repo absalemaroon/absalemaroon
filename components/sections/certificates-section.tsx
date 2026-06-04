@@ -1,7 +1,8 @@
 "use client";
 
 import { useState } from "react";
-import { Award, ExternalLink, X, Calendar, Hash, CheckCircle } from "lucide-react";
+import { ExternalLink, X, Calendar, Hash, CheckCircle } from "lucide-react";
+import Image from "next/image";
 
 const certificates = [
   {
@@ -12,8 +13,8 @@ const certificates = [
     credentialId: "BSF-2024-001",
     description:
       "Comprehensive certification covering blockchain security principles, smart contract vulnerabilities, and secure development practices.",
-    skills: ["Smart Contract Security", "Cryptography", "Threat Modeling"],
     verificationUrl: "#",
+    thumbnail: "/images/certificates/blockchain-security.jpg",
   },
   {
     id: 2,
@@ -23,8 +24,8 @@ const certificates = [
     credentialId: "CED-2024-042",
     description:
       "Professional certification demonstrating proficiency in Ethereum development, including Solidity, EVM internals, and dApp architecture.",
-    skills: ["Solidity", "EVM", "dApp Development", "Testing"],
     verificationUrl: "#",
+    thumbnail: "/images/certificates/ethereum-developer.jpg",
   },
   {
     id: 3,
@@ -34,8 +35,8 @@ const certificates = [
     credentialId: "DPA-2023-187",
     description:
       "Specialized certification in analyzing decentralized finance protocols, including risk assessment, economic modeling, and governance analysis.",
-    skills: ["Risk Analysis", "Economic Modeling", "Protocol Review"],
     verificationUrl: "#",
+    thumbnail: "/images/certificates/defi-analysis.jpg",
   },
   {
     id: 4,
@@ -45,8 +46,8 @@ const certificates = [
     credentialId: "CSP-2023-994",
     description:
       "Industry-recognized certification covering network security, cryptography, identity management, and security operations.",
-    skills: ["Network Security", "Incident Response", "Security Operations"],
     verificationUrl: "#",
+    thumbnail: "/images/certificates/cybersecurity.jpg",
   },
 ];
 
@@ -69,58 +70,55 @@ export function CertificatesSection() {
         {certificates.map((cert) => (
           <div
             key={cert.id}
-            className="p-5 rounded-xl border border-border bg-card hover:border-zinc-700 transition-colors cursor-pointer"
+            className="rounded-xl border border-border bg-card hover:border-zinc-700 transition-colors cursor-pointer overflow-hidden"
             onClick={() => setSelectedCert(cert)}
           >
-            <div className="flex items-start gap-4">
-              {/* Certificate Icon */}
-              <div className="flex-shrink-0 p-3 rounded-xl bg-amber-500/10">
-                <Award className="w-6 h-6 text-amber-400" />
-              </div>
-
-              {/* Certificate Info */}
-              <div className="flex-1 min-w-0">
-                <div className="flex items-start justify-between gap-3 mb-2">
-                  <div>
-                    <h3 className="font-semibold text-foreground leading-tight">
-                      {cert.name}
-                    </h3>
-                    <p className="text-sm text-muted mt-0.5">{cert.issuer}</p>
-                  </div>
-                  <div className="flex items-center gap-1 text-emerald-400 text-xs font-medium flex-shrink-0">
-                    <CheckCircle className="w-3.5 h-3.5" />
-                    <span>Verified</span>
-                  </div>
-                </div>
-
-                <p className="text-sm text-muted leading-relaxed mb-3">
-                  {cert.description}
-                </p>
-
-                {/* Meta Info */}
-                <div className="flex flex-wrap items-center gap-x-4 gap-y-2 text-xs text-muted mb-3">
-                  <span className="flex items-center gap-1.5">
-                    <Calendar className="w-3.5 h-3.5" />
-                    {cert.date}
-                  </span>
-                  <span className="flex items-center gap-1.5">
-                    <Hash className="w-3.5 h-3.5" />
-                    {cert.credentialId}
-                  </span>
-                </div>
-
-                {/* Skills */}
-                <div className="flex flex-wrap gap-2">
-                  {cert.skills.map((skill) => (
-                    <span
-                      key={skill}
-                      className="px-2.5 py-1 text-xs rounded-lg bg-zinc-800 text-zinc-300"
-                    >
-                      {skill}
+            {/* Thumbnail Image */}
+            <div className="relative w-full h-40 bg-zinc-900">
+              <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-zinc-800 to-zinc-900">
+                <div className="text-center p-4">
+                  <div className="w-16 h-16 mx-auto mb-2 rounded-xl bg-amber-500/20 flex items-center justify-center">
+                    <span className="text-2xl font-bold text-amber-400">
+                      {cert.issuer.charAt(0)}
                     </span>
-                  ))}
+                  </div>
+                  <p className="text-xs text-zinc-500">{cert.issuer}</p>
                 </div>
               </div>
+            </div>
+
+            {/* Certificate Info */}
+            <div className="p-4">
+              {/* Title */}
+              <div className="flex items-start justify-between gap-3 mb-2">
+                <h3 className="font-semibold text-foreground leading-tight">
+                  {cert.name}
+                </h3>
+                <div className="flex items-center gap-1 text-emerald-400 text-xs font-medium flex-shrink-0">
+                  <CheckCircle className="w-3.5 h-3.5" />
+                  <span>Verified</span>
+                </div>
+              </div>
+
+              {/* Issuer */}
+              <p className="text-sm text-muted mb-3">{cert.issuer}</p>
+
+              {/* Meta Info */}
+              <div className="flex flex-wrap items-center gap-x-4 gap-y-2 text-xs text-muted mb-3">
+                <span className="flex items-center gap-1.5">
+                  <Calendar className="w-3.5 h-3.5" />
+                  {cert.date}
+                </span>
+                <span className="flex items-center gap-1.5">
+                  <Hash className="w-3.5 h-3.5" />
+                  {cert.credentialId}
+                </span>
+              </div>
+
+              {/* Description */}
+              <p className="text-sm text-muted leading-relaxed line-clamp-2">
+                {cert.description}
+              </p>
             </div>
           </div>
         ))}
@@ -136,82 +134,78 @@ export function CertificatesSection() {
             className="bg-card border border-border rounded-2xl max-w-lg w-full max-h-[90vh] overflow-y-auto"
             onClick={(e) => e.stopPropagation()}
           >
-            <div className="p-6">
-              {/* Modal Header */}
-              <div className="flex items-start justify-between mb-6">
-                <div className="p-3 bg-amber-500/15 rounded-xl">
-                  <Award className="w-8 h-8 text-amber-400" />
-                </div>
-                <button
-                  onClick={() => setSelectedCert(null)}
-                  className="p-2 text-muted hover:text-foreground transition-colors rounded-full hover:bg-zinc-800"
-                >
-                  <X className="w-5 h-5" />
-                </button>
-              </div>
+            {/* Modal Header with Close */}
+            <div className="sticky top-0 bg-card/95 backdrop-blur-sm border-b border-border p-4 flex items-center justify-between">
+              <h3 className="font-semibold text-foreground">Certificate Details</h3>
+              <button
+                onClick={() => setSelectedCert(null)}
+                className="p-2 text-muted hover:text-foreground transition-colors rounded-full hover:bg-zinc-800"
+              >
+                <X className="w-5 h-5" />
+              </button>
+            </div>
 
+            {/* Certificate Thumbnail */}
+            <div className="relative w-full h-48 bg-zinc-900">
+              <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-zinc-800 to-zinc-900">
+                <div className="text-center p-4">
+                  <div className="w-20 h-20 mx-auto mb-3 rounded-xl bg-amber-500/20 flex items-center justify-center">
+                    <span className="text-3xl font-bold text-amber-400">
+                      {selectedCert.issuer.charAt(0)}
+                    </span>
+                  </div>
+                  <p className="text-sm text-zinc-400">{selectedCert.issuer}</p>
+                </div>
+              </div>
+            </div>
+
+            <div className="p-6">
               {/* Certificate Title */}
               <div className="flex items-start justify-between gap-3 mb-4">
-                <div>
-                  <h3 className="text-xl font-bold text-foreground mb-1">
-                    {selectedCert.name}
-                  </h3>
-                  <p className="text-muted">
-                    Issued by {selectedCert.issuer}
-                  </p>
-                </div>
+                <h3 className="text-xl font-bold text-foreground">
+                  {selectedCert.name}
+                </h3>
                 <div className="flex items-center gap-1 text-emerald-400 text-sm font-medium flex-shrink-0">
                   <CheckCircle className="w-4 h-4" />
                   <span>Verified</span>
                 </div>
               </div>
 
+              {/* Issuing Organization */}
+              <div className="mb-4">
+                <h4 className="text-xs font-medium text-muted uppercase tracking-wide mb-1">
+                  Issuing Organization
+                </h4>
+                <p className="text-foreground">{selectedCert.issuer}</p>
+              </div>
+
+              {/* Issue Date */}
+              <div className="mb-4">
+                <h4 className="text-xs font-medium text-muted uppercase tracking-wide mb-1">
+                  Issue Date
+                </h4>
+                <p className="text-foreground">{selectedCert.date}</p>
+              </div>
+
+              {/* Credential ID */}
+              <div className="mb-4">
+                <h4 className="text-xs font-medium text-muted uppercase tracking-wide mb-1">
+                  Credential ID
+                </h4>
+                <p className="text-foreground font-mono">{selectedCert.credentialId}</p>
+              </div>
+
               {/* Description */}
               <div className="mb-6">
-                <h4 className="text-sm font-medium text-foreground mb-2">
+                <h4 className="text-xs font-medium text-muted uppercase tracking-wide mb-1">
                   Description
                 </h4>
-                <p className="text-sm text-muted leading-relaxed">
+                <p className="text-foreground leading-relaxed">
                   {selectedCert.description}
                 </p>
               </div>
 
-              {/* Details Grid */}
-              <div className="grid grid-cols-2 gap-4 mb-6">
-                <div className="p-3 rounded-lg bg-zinc-900">
-                  <h4 className="text-xs font-medium text-muted mb-1">
-                    Date Earned
-                  </h4>
-                  <p className="text-sm text-foreground">{selectedCert.date}</p>
-                </div>
-                <div className="p-3 rounded-lg bg-zinc-900">
-                  <h4 className="text-xs font-medium text-muted mb-1">
-                    Credential ID
-                  </h4>
-                  <p className="text-sm text-foreground font-mono">
-                    {selectedCert.credentialId}
-                  </p>
-                </div>
-              </div>
-
-              {/* Skills */}
-              <div className="mb-6">
-                <h4 className="text-sm font-medium text-foreground mb-3">
-                  Skills Demonstrated
-                </h4>
-                <div className="flex flex-wrap gap-2">
-                  {selectedCert.skills.map((skill) => (
-                    <span
-                      key={skill}
-                      className="px-3 py-1.5 text-sm rounded-lg bg-zinc-800 text-zinc-300"
-                    >
-                      {skill}
-                    </span>
-                  ))}
-                </div>
-              </div>
-
-              {/* Verify Button */}
+              {/* Verification URL */}
               <a
                 href={selectedCert.verificationUrl}
                 target="_blank"
