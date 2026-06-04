@@ -1,7 +1,6 @@
 "use client";
 
-import Image from "next/image";
-import { FileText, Clock, MoreHorizontal, MessageCircle, Repeat2, Heart, Share, Bookmark } from "lucide-react";
+import { FileText, Calendar, Clock, ExternalLink, ChevronRight } from "lucide-react";
 
 const researchNotes = [
   {
@@ -10,10 +9,10 @@ const researchNotes = [
     summary:
       "An in-depth examination of Proof of Work, Proof of Stake, and emerging consensus mechanisms, analyzing their security properties, energy efficiency, and decentralization trade-offs.",
     category: "Consensus",
-    date: "Mar 15",
+    date: "March 2026",
     status: "Published",
     readTime: "12 min read",
-    engagement: { comments: 8, reposts: 24, likes: 156 },
+    topics: ["Proof of Work", "Proof of Stake", "Blockchain Security"],
   },
   {
     id: 2,
@@ -21,10 +20,10 @@ const researchNotes = [
     summary:
       "Documentation of common vulnerability patterns in smart contracts and defensive programming techniques for building secure decentralized applications.",
     category: "Security",
-    date: "Feb 28",
+    date: "February 2026",
     status: "Published",
     readTime: "8 min read",
-    engagement: { comments: 12, reposts: 45, likes: 203 },
+    topics: ["Smart Contracts", "Solidity", "Security Audits"],
   },
   {
     id: 3,
@@ -32,10 +31,10 @@ const researchNotes = [
     summary:
       "A systematic approach to evaluating risks in decentralized finance protocols, covering smart contract, economic, and governance risks.",
     category: "DeFi",
-    date: "Feb 10",
+    date: "February 2026",
     status: "In Progress",
     readTime: "15 min read",
-    engagement: { comments: 5, reposts: 18, likes: 89 },
+    topics: ["Risk Assessment", "Protocol Analysis", "Governance"],
   },
   {
     id: 4,
@@ -43,106 +42,73 @@ const researchNotes = [
     summary:
       "Research into the security challenges and attack vectors specific to cross-chain bridge implementations and interoperability protocols.",
     category: "Security",
-    date: "Jan 20",
+    date: "January 2026",
     status: "In Progress",
     readTime: "10 min read",
-    engagement: { comments: 3, reposts: 12, likes: 67 },
+    topics: ["Cross-Chain", "Bridges", "Interoperability"],
   },
 ];
 
-function ResearchCard({ note }: { note: typeof researchNotes[0] }) {
+function ResearchCard({ note, index }: { note: typeof researchNotes[0]; index: number }) {
   return (
-    <article className="p-4 hover:bg-white/[0.03] transition-colors cursor-pointer border-b border-border">
-      <div className="flex gap-3">
-        {/* Profile avatar */}
-        <div className="flex-shrink-0">
-          <div className="w-10 h-10 rounded-full overflow-hidden">
-            <Image
-              src="/images/absalem-aroon.jpg"
-              alt="Absalem Aroon"
-              width={40}
-              height={40}
-              className="object-cover"
-            />
-          </div>
-        </div>
-
-        <div className="flex-1 min-w-0">
-          {/* Header */}
-          <div className="flex items-center justify-between gap-2">
-            <div className="flex items-center gap-1 text-sm truncate">
-              <span className="font-bold text-foreground truncate">Absalem Aroon</span>
-              <svg viewBox="0 0 22 22" className="w-4 h-4 text-[#1d9bf0] flex-shrink-0" fill="currentColor">
-                <path d="M20.396 11c-.018-.646-.215-1.275-.57-1.816-.354-.54-.852-.972-1.438-1.246.223-.607.27-1.264.14-1.897-.131-.634-.437-1.218-.882-1.687-.47-.445-1.053-.75-1.687-.882-.633-.13-1.29-.083-1.897.14-.273-.587-.704-1.086-1.245-1.44S11.647 1.62 11 1.604c-.646.017-1.273.213-1.813.568s-.969.854-1.24 1.44c-.608-.223-1.267-.272-1.902-.14-.635.13-1.22.436-1.69.882-.445.47-.749 1.055-.878 1.688-.13.633-.08 1.29.144 1.896-.587.274-1.087.705-1.443 1.245-.356.54-.555 1.17-.574 1.817.02.647.218 1.276.574 1.817.356.54.856.972 1.443 1.245-.224.606-.274 1.263-.144 1.896.13.634.433 1.218.877 1.688.47.443 1.054.747 1.687.878.633.132 1.29.084 1.897-.136.274.586.705 1.084 1.246 1.439.54.354 1.17.551 1.816.569.647-.016 1.276-.213 1.817-.567s.972-.854 1.245-1.44c.604.239 1.266.296 1.903.164.636-.132 1.22-.447 1.68-.907.46-.46.776-1.044.908-1.681s.075-1.299-.165-1.903c.586-.274 1.084-.705 1.439-1.246.354-.54.551-1.17.569-1.816zM9.662 14.85l-3.429-3.428 1.293-1.302 2.072 2.072 4.4-4.794 1.347 1.246z" />
-              </svg>
-              <span className="text-muted truncate">@AbsalemAroon</span>
-              <span className="text-muted">·</span>
-              <span className="text-muted">{note.date}</span>
-            </div>
-            <button className="p-1.5 -mr-1.5 rounded-full hover:bg-[#1d9bf0]/10 hover:text-[#1d9bf0] text-muted transition-colors">
-              <MoreHorizontal className="w-4 h-4" />
-            </button>
-          </div>
-
-          {/* Content */}
-          <div className="mt-1">
-            <h3 className="font-bold text-foreground text-[15px] leading-tight mb-1">
-              {note.title}
-            </h3>
-            <p className="text-[15px] text-foreground leading-relaxed">
-              {note.summary}
-            </p>
-          </div>
-
-          {/* Tags */}
-          <div className="flex items-center gap-2 mt-3">
-            <span className="px-2.5 py-0.5 text-xs font-medium rounded-full bg-[#1d9bf0]/10 text-[#1d9bf0]">
+    <article className="group">
+      <div className="p-5 border-b border-border hover:bg-white/[0.02] transition-colors">
+        {/* Category & Status Header */}
+        <div className="flex items-center justify-between mb-3">
+          <div className="flex items-center gap-3">
+            <span className="text-xs font-semibold uppercase tracking-wider text-[#1d9bf0]">
               {note.category}
             </span>
-            <span className={`px-2.5 py-0.5 text-xs font-medium rounded-full ${
+            <span className={`px-2 py-0.5 text-xs font-medium rounded ${
               note.status === "Published" 
-                ? "bg-emerald-500/10 text-emerald-400" 
-                : "bg-yellow-500/10 text-yellow-400"
+                ? "bg-emerald-500/10 text-emerald-400 border border-emerald-500/20" 
+                : "bg-amber-500/10 text-amber-400 border border-amber-500/20"
             }`}>
               {note.status}
             </span>
-            <span className="flex items-center gap-1 text-xs text-muted">
-              <Clock className="w-3 h-3" />
+          </div>
+          <span className="text-xs text-muted font-mono">#{String(index + 1).padStart(2, '0')}</span>
+        </div>
+
+        {/* Title */}
+        <h3 className="text-lg font-semibold text-foreground mb-2 group-hover:text-[#1d9bf0] transition-colors cursor-pointer">
+          {note.title}
+        </h3>
+
+        {/* Summary */}
+        <p className="text-sm text-muted leading-relaxed mb-4">
+          {note.summary}
+        </p>
+
+        {/* Topics */}
+        <div className="flex flex-wrap gap-2 mb-4">
+          {note.topics.map((topic) => (
+            <span
+              key={topic}
+              className="px-2.5 py-1 text-xs bg-white/5 text-muted rounded border border-border"
+            >
+              {topic}
+            </span>
+          ))}
+        </div>
+
+        {/* Meta Info */}
+        <div className="flex items-center justify-between">
+          <div className="flex items-center gap-4 text-xs text-muted">
+            <span className="flex items-center gap-1.5">
+              <Calendar className="w-3.5 h-3.5" />
+              {note.date}
+            </span>
+            <span className="flex items-center gap-1.5">
+              <Clock className="w-3.5 h-3.5" />
               {note.readTime}
             </span>
           </div>
-
-          {/* Engagement Actions */}
-          <div className="flex items-center justify-between mt-3 max-w-md">
-            <button className="flex items-center gap-1.5 text-muted hover:text-[#1d9bf0] transition-colors group">
-              <div className="p-1.5 rounded-full group-hover:bg-[#1d9bf0]/10 transition-colors">
-                <MessageCircle className="w-4 h-4" />
-              </div>
-              <span className="text-xs">{note.engagement.comments}</span>
-            </button>
-            <button className="flex items-center gap-1.5 text-muted hover:text-emerald-400 transition-colors group">
-              <div className="p-1.5 rounded-full group-hover:bg-emerald-400/10 transition-colors">
-                <Repeat2 className="w-4 h-4" />
-              </div>
-              <span className="text-xs">{note.engagement.reposts}</span>
-            </button>
-            <button className="flex items-center gap-1.5 text-muted hover:text-rose-400 transition-colors group">
-              <div className="p-1.5 rounded-full group-hover:bg-rose-400/10 transition-colors">
-                <Heart className="w-4 h-4" />
-              </div>
-              <span className="text-xs">{note.engagement.likes}</span>
-            </button>
-            <button className="flex items-center gap-1.5 text-muted hover:text-[#1d9bf0] transition-colors group">
-              <div className="p-1.5 rounded-full group-hover:bg-[#1d9bf0]/10 transition-colors">
-                <Bookmark className="w-4 h-4" />
-              </div>
-            </button>
-            <button className="flex items-center gap-1.5 text-muted hover:text-[#1d9bf0] transition-colors group">
-              <div className="p-1.5 rounded-full group-hover:bg-[#1d9bf0]/10 transition-colors">
-                <Share className="w-4 h-4" />
-              </div>
-            </button>
-          </div>
+          
+          <button className="flex items-center gap-1 text-xs text-[#1d9bf0] opacity-0 group-hover:opacity-100 transition-opacity">
+            Read Paper
+            <ChevronRight className="w-3.5 h-3.5" />
+          </button>
         </div>
       </div>
     </article>
@@ -152,15 +118,28 @@ function ResearchCard({ note }: { note: typeof researchNotes[0] }) {
 export function ResearchSection() {
   return (
     <div>
+      {/* Section Header */}
+      <div className="px-5 py-4 border-b border-border">
+        <div className="flex items-center gap-3">
+          <div className="p-2 bg-[#1d9bf0]/10 rounded-lg">
+            <FileText className="w-5 h-5 text-[#1d9bf0]" />
+          </div>
+          <div>
+            <h2 className="text-base font-semibold text-foreground">Research Papers</h2>
+            <p className="text-xs text-muted">Published research and ongoing investigations</p>
+          </div>
+        </div>
+      </div>
+
       {/* Research Cards */}
-      {researchNotes.map((note) => (
-        <ResearchCard key={note.id} note={note} />
+      {researchNotes.map((note, index) => (
+        <ResearchCard key={note.id} note={note} index={index} />
       ))}
 
-      {/* Show More */}
-      <div className="p-4 text-center">
-        <button className="text-[#1d9bf0] hover:underline text-[15px]">
-          Show more research
+      {/* View All Button */}
+      <div className="p-4 border-b border-border">
+        <button className="w-full py-2.5 text-sm text-[#1d9bf0] hover:bg-[#1d9bf0]/5 rounded-lg transition-colors">
+          View all research papers
         </button>
       </div>
     </div>
