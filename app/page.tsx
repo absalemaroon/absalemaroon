@@ -7,7 +7,7 @@ import { AboutSection } from "@/components/sections/about-section";
 import { ResearchSection } from "@/components/sections/research-section";
 import { ProjectsSection } from "@/components/sections/projects-section";
 import { CertificatesSection } from "@/components/sections/certificates-section";
-import { WritingSection } from "@/components/sections/writing-section";
+import { ArticlesSection } from "@/components/sections/articles-section";
 import { ContactSection } from "@/components/sections/contact-section";
 
 export default function Home() {
@@ -23,8 +23,8 @@ export default function Home() {
         return <ProjectsSection />;
       case "certificates":
         return <CertificatesSection />;
-      case "writing":
-        return <WritingSection />;
+      case "articles":
+        return <ArticlesSection />;
       case "contact":
         return <ContactSection />;
       default:

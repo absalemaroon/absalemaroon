@@ -12,7 +12,7 @@ const tabs = [
   { id: "research", label: "Research" },
   { id: "projects", label: "Projects" },
   { id: "certificates", label: "Certificates" },
-  { id: "writing", label: "Writing" },
+  { id: "articles", label: "Articles" },
   { id: "contact", label: "Contact" },
 ];
 
