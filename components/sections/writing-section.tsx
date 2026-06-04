@@ -1,18 +1,8 @@
 "use client";
 
 import { useState } from "react";
-import {
-  Card,
-  CardHeader,
-  CardTitle,
-  CardDescription,
-  CardContent,
-  CardFooter,
-  CardLink,
-  CardMeta,
-  Badge,
-} from "@/components/ui/card";
-import { Search } from "lucide-react";
+import Image from "next/image";
+import { Search, Clock, MoreHorizontal, MessageCircle, Repeat2, Heart, Share, Bookmark } from "lucide-react";
 
 const articles = [
   {
@@ -21,8 +11,9 @@ const articles = [
     summary:
       "Exploring how self-sovereign identity systems are reshaping digital authentication and privacy in the Web3 era.",
     category: "Web3",
-    date: "March 2024",
+    date: "Mar 2024",
     readTime: "8 min read",
+    engagement: { comments: 14, reposts: 38, likes: 198 },
   },
   {
     id: 2,
@@ -30,8 +21,9 @@ const articles = [
     summary:
       "A comprehensive look at Maximal Extractable Value, its implications for users, and strategies for mitigation.",
     category: "DeFi",
-    date: "February 2024",
+    date: "Feb 2024",
     readTime: "12 min read",
+    engagement: { comments: 22, reposts: 56, likes: 287 },
   },
   {
     id: 3,
@@ -39,8 +31,9 @@ const articles = [
     summary:
       "How ZK technology is enabling new use cases in scalability, compliance, and decentralized verification.",
     category: "Cryptography",
-    date: "January 2024",
+    date: "Jan 2024",
     readTime: "10 min read",
+    engagement: { comments: 18, reposts: 45, likes: 234 },
   },
   {
     id: 4,
@@ -48,12 +41,105 @@ const articles = [
     summary:
       "Analyzing the economic incentives and security assumptions underlying rollup and state channel architectures.",
     category: "Security",
-    date: "December 2023",
+    date: "Dec 2023",
     readTime: "15 min read",
+    engagement: { comments: 25, reposts: 62, likes: 312 },
   },
 ];
 
 const categories = ["All", "Security", "DeFi", "Web3", "Cryptography"];
+
+function ArticleCard({ article }: { article: typeof articles[0] }) {
+  return (
+    <article className="p-4 hover:bg-white/[0.03] transition-colors cursor-pointer border-b border-border">
+      <div className="flex gap-3">
+        {/* Profile avatar */}
+        <div className="flex-shrink-0">
+          <div className="w-10 h-10 rounded-full overflow-hidden">
+            <Image
+              src="/images/absalem-aroon.jpg"
+              alt="Absalem Aroon"
+              width={40}
+              height={40}
+              className="object-cover"
+            />
+          </div>
+        </div>
+
+        <div className="flex-1 min-w-0">
+          {/* Header */}
+          <div className="flex items-center justify-between gap-2">
+            <div className="flex items-center gap-1 text-sm truncate">
+              <span className="font-bold text-foreground truncate">Absalem Aroon</span>
+              <svg viewBox="0 0 22 22" className="w-4 h-4 text-[#1d9bf0] flex-shrink-0" fill="currentColor">
+                <path d="M20.396 11c-.018-.646-.215-1.275-.57-1.816-.354-.54-.852-.972-1.438-1.246.223-.607.27-1.264.14-1.897-.131-.634-.437-1.218-.882-1.687-.47-.445-1.053-.75-1.687-.882-.633-.13-1.29-.083-1.897.14-.273-.587-.704-1.086-1.245-1.44S11.647 1.62 11 1.604c-.646.017-1.273.213-1.813.568s-.969.854-1.24 1.44c-.608-.223-1.267-.272-1.902-.14-.635.13-1.22.436-1.69.882-.445.47-.749 1.055-.878 1.688-.13.633-.08 1.29.144 1.896-.587.274-1.087.705-1.443 1.245-.356.54-.555 1.17-.574 1.817.02.647.218 1.276.574 1.817.356.54.856.972 1.443 1.245-.224.606-.274 1.263-.144 1.896.13.634.433 1.218.877 1.688.47.443 1.054.747 1.687.878.633.132 1.29.084 1.897-.136.274.586.705 1.084 1.246 1.439.54.354 1.17.551 1.816.569.647-.016 1.276-.213 1.817-.567s.972-.854 1.245-1.44c.604.239 1.266.296 1.903.164.636-.132 1.22-.447 1.68-.907.46-.46.776-1.044.908-1.681s.075-1.299-.165-1.903c.586-.274 1.084-.705 1.439-1.246.354-.54.551-1.17.569-1.816zM9.662 14.85l-3.429-3.428 1.293-1.302 2.072 2.072 4.4-4.794 1.347 1.246z" />
+              </svg>
+              <span className="text-muted truncate">@AbsalemAroon</span>
+              <span className="text-muted">·</span>
+              <span className="text-muted">{article.date}</span>
+            </div>
+            <button className="p-1.5 -mr-1.5 rounded-full hover:bg-[#1d9bf0]/10 hover:text-[#1d9bf0] text-muted transition-colors">
+              <MoreHorizontal className="w-4 h-4" />
+            </button>
+          </div>
+
+          {/* Content */}
+          <div className="mt-1">
+            <h3 className="font-bold text-foreground text-[15px] leading-tight mb-1">
+              {article.title}
+            </h3>
+            <p className="text-[15px] text-foreground leading-relaxed">
+              {article.summary}
+            </p>
+          </div>
+
+          {/* Tags */}
+          <div className="flex items-center gap-2 mt-3">
+            <span className="px-2.5 py-0.5 text-xs font-medium rounded-full bg-[#1d9bf0]/10 text-[#1d9bf0]">
+              {article.category}
+            </span>
+            <span className="flex items-center gap-1 text-xs text-muted">
+              <Clock className="w-3 h-3" />
+              {article.readTime}
+            </span>
+          </div>
+
+          {/* Engagement Actions */}
+          <div className="flex items-center justify-between mt-3 max-w-md">
+            <button className="flex items-center gap-1.5 text-muted hover:text-[#1d9bf0] transition-colors group">
+              <div className="p-1.5 rounded-full group-hover:bg-[#1d9bf0]/10 transition-colors">
+                <MessageCircle className="w-4 h-4" />
+              </div>
+              <span className="text-xs">{article.engagement.comments}</span>
+            </button>
+            <button className="flex items-center gap-1.5 text-muted hover:text-emerald-400 transition-colors group">
+              <div className="p-1.5 rounded-full group-hover:bg-emerald-400/10 transition-colors">
+                <Repeat2 className="w-4 h-4" />
+              </div>
+              <span className="text-xs">{article.engagement.reposts}</span>
+            </button>
+            <button className="flex items-center gap-1.5 text-muted hover:text-rose-400 transition-colors group">
+              <div className="p-1.5 rounded-full group-hover:bg-rose-400/10 transition-colors">
+                <Heart className="w-4 h-4" />
+              </div>
+              <span className="text-xs">{article.engagement.likes}</span>
+            </button>
+            <button className="flex items-center gap-1.5 text-muted hover:text-[#1d9bf0] transition-colors group">
+              <div className="p-1.5 rounded-full group-hover:bg-[#1d9bf0]/10 transition-colors">
+                <Bookmark className="w-4 h-4" />
+              </div>
+            </button>
+            <button className="flex items-center gap-1.5 text-muted hover:text-[#1d9bf0] transition-colors group">
+              <div className="p-1.5 rounded-full group-hover:bg-[#1d9bf0]/10 transition-colors">
+                <Share className="w-4 h-4" />
+              </div>
+            </button>
+          </div>
+        </div>
+      </div>
+    </article>
+  );
+}
 
 export function WritingSection() {
   const [selectedCategory, setSelectedCategory] = useState("All");
@@ -69,40 +155,28 @@ export function WritingSection() {
   });
 
   return (
-    <div className="space-y-12">
-      {/* Section Header */}
-      <div>
-        <h2 className="text-3xl lg:text-4xl font-semibold tracking-tight text-balance">
-          Writing
-        </h2>
-        <div className="mt-1 w-12 h-0.5 bg-foreground" />
-        <p className="mt-4 text-muted leading-relaxed max-w-2xl">
-          Essays, analysis, and long-form writing on blockchain technology, 
-          decentralized systems, and the future of Web3.
-        </p>
-      </div>
-
-      {/* Search and Filter */}
-      <div className="flex flex-col sm:flex-row gap-4">
-        <div className="relative flex-1">
-          <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" />
+    <div>
+      {/* Search and Filter Bar */}
+      <div className="sticky top-[57px] z-40 bg-background/80 backdrop-blur-md border-b border-border px-4 py-3">
+        <div className="relative mb-3">
+          <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted" />
           <input
             type="text"
-            placeholder="Search articles..."
+            placeholder="Search articles"
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
-            className="w-full bg-card border border-border rounded-lg pl-10 pr-4 py-2.5 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-1 focus:ring-border"
+            className="w-full bg-[#202327] border-none rounded-full pl-10 pr-4 py-2.5 text-sm text-foreground placeholder:text-muted focus:outline-none focus:ring-1 focus:ring-[#1d9bf0]"
           />
         </div>
-        <div className="flex flex-wrap gap-2">
+        <div className="flex gap-2 overflow-x-auto scrollbar-hide">
           {categories.map((category) => (
             <button
               key={category}
               onClick={() => setSelectedCategory(category)}
-              className={`px-3 py-1.5 text-sm rounded-lg transition-colors ${
+              className={`px-4 py-1.5 text-sm font-medium rounded-full whitespace-nowrap transition-colors ${
                 selectedCategory === category
                   ? "bg-foreground text-background"
-                  : "bg-card border border-border text-muted hover:text-foreground"
+                  : "bg-transparent border border-border text-muted hover:bg-white/5"
               }`}
             >
               {category}
@@ -111,33 +185,25 @@ export function WritingSection() {
         </div>
       </div>
 
-      {/* Articles Grid */}
-      <div className="space-y-4">
-        {filteredArticles.map((article) => (
-          <Card key={article.id}>
-            <CardHeader>
-              <CardMeta className="mb-2">
-                <Badge variant="outline">{article.category}</Badge>
-                <span>{article.date}</span>
-                <span>{article.readTime}</span>
-              </CardMeta>
-              <CardTitle>{article.title}</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <CardDescription>{article.summary}</CardDescription>
-            </CardContent>
-            <CardFooter>
-              <CardLink href="#">Read Article</CardLink>
-            </CardFooter>
-          </Card>
-        ))}
+      {/* Articles */}
+      {filteredArticles.map((article) => (
+        <ArticleCard key={article.id} article={article} />
+      ))}
 
-        {filteredArticles.length === 0 && (
-          <div className="text-center py-12">
-            <p className="text-muted">No articles found matching your criteria.</p>
-          </div>
-        )}
-      </div>
+      {filteredArticles.length === 0 && (
+        <div className="p-8 text-center">
+          <p className="text-muted">No articles found matching your criteria.</p>
+        </div>
+      )}
+
+      {/* Show More */}
+      {filteredArticles.length > 0 && (
+        <div className="p-4 text-center">
+          <button className="text-[#1d9bf0] hover:underline text-[15px]">
+            Show more articles
+          </button>
+        </div>
+      )}
     </div>
   );
 }

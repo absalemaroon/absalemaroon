@@ -1,9 +1,10 @@
-import { Card, CardContent } from "@/components/ui/card";
-import { Badge } from "@/components/ui/card";
+"use client";
+
+import { Briefcase, GraduationCap, Target, Lightbulb, Quote } from "lucide-react";
 
 const expertiseAreas = [
   "Blockchain Security",
-  "DeFi Protocols",
+  "DeFi Protocols", 
   "Smart Contract Auditing",
   "Distributed Systems",
   "Cryptography",
@@ -37,36 +38,49 @@ const focusAreas = [
 
 export function AboutSection() {
   return (
-    <div className="space-y-12">
-      {/* Section Header */}
-      <div>
-        <h2 className="text-3xl lg:text-4xl font-semibold tracking-tight text-balance">
-          About
-        </h2>
-        <div className="mt-1 w-12 h-0.5 bg-foreground" />
+    <div className="divide-y divide-border">
+      {/* Biography Card */}
+      <div className="p-4 hover:bg-white/[0.03] transition-colors">
+        <div className="flex gap-3">
+          <div className="flex-shrink-0 w-10 h-10 rounded-full bg-[#1d9bf0]/10 flex items-center justify-center">
+            <Briefcase className="w-5 h-5 text-[#1d9bf0]" />
+          </div>
+          <div className="flex-1 min-w-0">
+            <div className="flex items-center gap-2 mb-1">
+              <span className="font-bold text-foreground">Biography</span>
+            </div>
+            <div className="space-y-3 text-[15px] text-foreground leading-relaxed">
+              <p>
+                Absalem Aroon is a Blockchain & DeFi Researcher and Web3 Strategist 
+                dedicated to advancing the understanding of decentralized systems. As 
+                the Founder of Absalex Labs, he conducts independent research on 
+                blockchain protocols, trust infrastructure, and emerging Web3 ecosystems.
+              </p>
+              <p>
+                His work focuses on the intersection of cryptography, distributed 
+                computing, and security in decentralized environments. Through 
+                rigorous analysis and documentation, he contributes to the broader 
+                understanding of how these systems can be designed, secured, and 
+                scaled.
+              </p>
+            </div>
+          </div>
+        </div>
       </div>
 
-      {/* Biography */}
-      <div className="space-y-6">
-        <div>
-          <h3 className="text-lg font-medium text-foreground mb-3">Biography</h3>
-          <div className="space-y-4 text-muted leading-relaxed">
-            <p>
-              Absalem Aroon is a Blockchain & DeFi Researcher and Web3 Strategist 
-              dedicated to advancing the understanding of decentralized systems. As 
-              the Founder of Absalex Labs, he conducts independent research on 
-              blockchain protocols, trust infrastructure, and emerging Web3 ecosystems.
-            </p>
-            <p>
-              His work focuses on the intersection of cryptography, distributed 
-              computing, and security in decentralized environments. Through 
-              rigorous analysis and documentation, he contributes to the broader 
-              understanding of how these systems can be designed, secured, and 
-              scaled.
-            </p>
-            <p>
+      {/* Education Card */}
+      <div className="p-4 hover:bg-white/[0.03] transition-colors">
+        <div className="flex gap-3">
+          <div className="flex-shrink-0 w-10 h-10 rounded-full bg-emerald-500/10 flex items-center justify-center">
+            <GraduationCap className="w-5 h-5 text-emerald-500" />
+          </div>
+          <div className="flex-1 min-w-0">
+            <div className="flex items-center gap-2 mb-1">
+              <span className="font-bold text-foreground">Education</span>
+            </div>
+            <p className="text-[15px] text-foreground leading-relaxed">
               Currently pursuing studies in Cybersecurity at the Federal University 
-              of Technology, Babura, Nigeria, Absalem combines academic foundations 
+              of Technology, Babura, Nigeria. Combining academic foundations 
               with practical research to address real-world challenges in blockchain 
               security and distributed systems.
             </p>
@@ -74,72 +88,106 @@ export function AboutSection() {
         </div>
       </div>
 
-      {/* Research Philosophy */}
-      <Card hover={false} className="bg-accent/50 border-border/50">
-        <CardContent>
-          <h3 className="text-lg font-medium text-foreground mb-3">
-            Research Philosophy
-          </h3>
-          <p className="text-muted leading-relaxed italic">
-            {'"'}True understanding of decentralized systems comes not from building 
-            on assumptions, but from questioning the foundations upon which they 
-            rest. Every protocol, every consensus mechanism, every cryptographic 
-            primitive deserves scrutiny through the lens of both possibility and 
-            failure.{'"'}
-          </p>
-        </CardContent>
-      </Card>
+      {/* Research Philosophy Quote */}
+      <div className="p-4 hover:bg-white/[0.03] transition-colors">
+        <div className="flex gap-3">
+          <div className="flex-shrink-0 w-10 h-10 rounded-full bg-purple-500/10 flex items-center justify-center">
+            <Quote className="w-5 h-5 text-purple-500" />
+          </div>
+          <div className="flex-1 min-w-0">
+            <div className="flex items-center gap-2 mb-2">
+              <span className="font-bold text-foreground">Research Philosophy</span>
+            </div>
+            <div className="border-l-2 border-[#1d9bf0] pl-4">
+              <p className="text-[15px] text-muted italic leading-relaxed">
+                &ldquo;True understanding of decentralized systems comes not from building 
+                on assumptions, but from questioning the foundations upon which they 
+                rest. Every protocol, every consensus mechanism, every cryptographic 
+                primitive deserves scrutiny through the lens of both possibility and 
+                failure.&rdquo;
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
 
       {/* Areas of Expertise */}
-      <div>
-        <h3 className="text-lg font-medium text-foreground mb-4">
-          Areas of Expertise
-        </h3>
-        <div className="flex flex-wrap gap-2">
-          {expertiseAreas.map((area) => (
-            <Badge key={area} variant="outline" className="text-sm py-1.5 px-3">
-              {area}
-            </Badge>
-          ))}
+      <div className="p-4 hover:bg-white/[0.03] transition-colors">
+        <div className="flex gap-3">
+          <div className="flex-shrink-0 w-10 h-10 rounded-full bg-orange-500/10 flex items-center justify-center">
+            <Lightbulb className="w-5 h-5 text-orange-500" />
+          </div>
+          <div className="flex-1 min-w-0">
+            <div className="flex items-center gap-2 mb-3">
+              <span className="font-bold text-foreground">Areas of Expertise</span>
+            </div>
+            <div className="flex flex-wrap gap-2">
+              {expertiseAreas.map((area) => (
+                <span 
+                  key={area} 
+                  className="px-3 py-1.5 text-sm rounded-full border border-border text-muted hover:bg-white/5 hover:border-[#1d9bf0]/50 transition-colors cursor-default"
+                >
+                  {area}
+                </span>
+              ))}
+            </div>
+          </div>
         </div>
       </div>
 
       {/* Focus Areas */}
-      <div>
-        <h3 className="text-lg font-medium text-foreground mb-4">Focus Areas</h3>
-        <div className="grid gap-4 sm:grid-cols-2">
-          {focusAreas.map((area) => (
-            <Card key={area.title} className="bg-card/50">
-              <CardContent>
-                <h4 className="font-medium text-card-foreground mb-2">
-                  {area.title}
-                </h4>
-                <p className="text-sm text-muted leading-relaxed">
-                  {area.description}
-                </p>
-              </CardContent>
-            </Card>
-          ))}
+      <div className="p-4 hover:bg-white/[0.03] transition-colors">
+        <div className="flex gap-3">
+          <div className="flex-shrink-0 w-10 h-10 rounded-full bg-[#1d9bf0]/10 flex items-center justify-center">
+            <Target className="w-5 h-5 text-[#1d9bf0]" />
+          </div>
+          <div className="flex-1 min-w-0">
+            <div className="flex items-center gap-2 mb-3">
+              <span className="font-bold text-foreground">Focus Areas</span>
+            </div>
+            <div className="grid gap-3">
+              {focusAreas.map((area) => (
+                <div 
+                  key={area.title}
+                  className="p-3 rounded-xl border border-border hover:border-border/80 transition-colors"
+                >
+                  <h4 className="font-semibold text-foreground text-sm mb-1">
+                    {area.title}
+                  </h4>
+                  <p className="text-sm text-muted leading-relaxed">
+                    {area.description}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
       </div>
 
       {/* Mission & Vision */}
-      <div className="grid gap-6 sm:grid-cols-2">
-        <div>
-          <h3 className="text-lg font-medium text-foreground mb-3">Mission</h3>
-          <p className="text-muted leading-relaxed">
-            To advance the security and understanding of decentralized systems 
-            through rigorous, independent research that benefits the broader 
-            blockchain and Web3 community.
-          </p>
-        </div>
-        <div>
-          <h3 className="text-lg font-medium text-foreground mb-3">Vision</h3>
-          <p className="text-muted leading-relaxed">
-            A future where trust infrastructure is transparent, secure, and 
-            accessible, enabling new forms of coordination and value exchange 
-            that empower individuals and communities globally.
-          </p>
+      <div className="p-4 hover:bg-white/[0.03] transition-colors">
+        <div className="flex gap-3">
+          <div className="flex-shrink-0 w-10 h-10 rounded-full bg-rose-500/10 flex items-center justify-center">
+            <Target className="w-5 h-5 text-rose-500" />
+          </div>
+          <div className="flex-1 min-w-0 space-y-4">
+            <div>
+              <span className="font-bold text-foreground">Mission</span>
+              <p className="text-[15px] text-muted leading-relaxed mt-1">
+                To advance the security and understanding of decentralized systems 
+                through rigorous, independent research that benefits the broader 
+                blockchain and Web3 community.
+              </p>
+            </div>
+            <div>
+              <span className="font-bold text-foreground">Vision</span>
+              <p className="text-[15px] text-muted leading-relaxed mt-1">
+                A future where trust infrastructure is transparent, secure, and 
+                accessible, enabling new forms of coordination and value exchange 
+                that empower individuals and communities globally.
+              </p>
+            </div>
+          </div>
         </div>
       </div>
     </div>
