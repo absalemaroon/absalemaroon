@@ -4,18 +4,11 @@ layout: default
 permalink: /certificates/
 ---
 
-## Certificates
+# Certifications
 
-A growing record of professional learning, technical training, and academic milestones in cybersecurity, blockchain, and related fields.
+## Binance Academy — Beginner Track
 
-### Professional Development
+**Title:** The Fundamentals of Crypto & Blockchain  
+**Provider:** Binance Academy
 
-- **Certificate title** — Issuing organization, year
-- **Certificate title** — Issuing organization, year
-
-### Academic & Technical Training
-
-- **Course or program** — Institution, year
-- **Course or program** — Institution, year
-
-> This page will be updated as new certifications and learning milestones are completed.
+[![The Fundamentals of Crypto & Blockchain](./img/binance-certificate.jpg)](https://www.binance.com/en/academy/courses/certificate/1af66da5b32e0abda80a6ea09059e09c345ba60195fbeaffe0e889f4384e8ffc)
