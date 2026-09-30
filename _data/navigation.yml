@@ -1,6 +1,13 @@
 main:
-  - title: "Homepage"
+  - title: "Home"
     url: /
-  - title: "Related Publications"
-    url: /relevant/
-
+  - title: "Research"
+    url: /research/
+  - title: "Software"
+    url: /software/
+  - title: "Publications"
+    url: /publications/
+  - title: "Certificates"
+    url: /certificates/
+  - title: "Blog"
+    url: /blog/
