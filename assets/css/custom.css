@@ -1,0 +1,244 @@
+/* Professional Black & White Theme for Absalem Aroon */
+
+:root {
+  --primary-black: #1a1a1a;
+  --primary-white: #ffffff;
+  --accent-gray: #333333;
+  --light-gray: #f5f5f5;
+  --medium-gray: #888888;
+}
+
+body {
+  background-color: var(--primary-white);
+  color: var(--primary-black);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  line-height: 1.6;
+}
+
+.wrapper {
+  max-width: 960px;
+  margin: 0 auto;
+  background-color: var(--primary-white);
+}
+
+header {
+  background: linear-gradient(135deg, var(--primary-black) 0%, var(--accent-gray) 100%);
+  color: var(--primary-white);
+  padding: 40px 20px;
+  border-bottom: 4px solid var(--primary-black);
+}
+
+header h1 {
+  margin: 0 0 20px 0;
+  font-size: 32px;
+  font-weight: 700;
+  letter-spacing: -1px;
+}
+
+header h1 a {
+  color: var(--primary-white);
+  text-decoration: none;
+}
+
+header h1 a:hover {
+  color: var(--light-gray);
+  transition: color 0.3s ease;
+}
+
+header img {
+  max-width: 200px;
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin: 20px 0;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  border: 3px solid var(--primary-white);
+  display: block;
+}
+
+header p {
+  margin: 15px 0 0 0;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #e0e0e0;
+}
+
+header p a {
+  color: var(--light-gray);
+  text-decoration: underline;
+}
+
+header p a:hover {
+  color: var(--primary-white);
+}
+
+section {
+  padding: 40px 20px;
+  background-color: var(--primary-white);
+}
+
+section h1 {
+  font-size: 28px;
+  margin: 30px 0 20px 0;
+  color: var(--primary-black);
+  border-bottom: 3px solid var(--primary-black);
+  padding-bottom: 10px;
+}
+
+section h2 {
+  font-size: 22px;
+  margin: 25px 0 15px 0;
+  color: var(--accent-gray);
+  border-left: 4px solid var(--primary-black);
+  padding-left: 15px;
+}
+
+section h3 {
+  font-size: 18px;
+  margin: 20px 0 10px 0;
+  color: var(--primary-black);
+}
+
+section p {
+  margin: 15px 0;
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+section a {
+  color: var(--primary-black);
+  text-decoration: underline;
+  font-weight: 500;
+}
+
+section a:hover {
+  color: var(--medium-gray);
+  transition: color 0.2s ease;
+}
+
+footer {
+  background-color: var(--light-gray);
+  border-top: 2px solid var(--accent-gray);
+  padding: 20px;
+  text-align: center;
+  font-size: 13px;
+  color: var(--accent-gray);
+  margin-top: 40px;
+}
+
+footer a {
+  color: var(--primary-black);
+  text-decoration: underline;
+}
+
+footer a:hover {
+  color: var(--medium-gray);
+}
+
+/* Navigation styling */
+nav {
+  margin: 20px 0;
+  padding: 15px 0;
+  border-bottom: 2px solid var(--light-gray);
+}
+
+nav a {
+  display: inline-block;
+  margin-right: 20px;
+  color: var(--primary-black);
+  text-decoration: none;
+  font-weight: 500;
+  border-bottom: 3px solid transparent;
+  padding-bottom: 5px;
+}
+
+nav a:hover {
+  border-bottom-color: var(--primary-black);
+  transition: border 0.2s ease;
+}
+
+/* List styling */
+ul, ol {
+  margin: 15px 0;
+  padding-left: 30px;
+}
+
+li {
+  margin: 10px 0;
+  line-height: 1.7;
+}
+
+/* Code styling */
+code {
+  background-color: var(--light-gray);
+  color: var(--primary-black);
+  padding: 2px 6px;
+  border-radius: 3px;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 13px;
+}
+
+pre {
+  background-color: var(--light-gray);
+  border: 1px solid var(--accent-gray);
+  border-radius: 5px;
+  padding: 15px;
+  overflow-x: auto;
+  margin: 20px 0;
+}
+
+pre code {
+  background: none;
+  padding: 0;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  header {
+    padding: 30px 15px;
+  }
+
+  header h1 {
+    font-size: 24px;
+  }
+
+  section {
+    padding: 30px 15px;
+  }
+
+  section h1 {
+    font-size: 24px;
+  }
+
+  section h2 {
+    font-size: 19px;
+  }
+
+  nav a {
+    margin-right: 10px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  header h1 {
+    font-size: 20px;
+  }
+
+  header img {
+    max-width: 150px;
+  }
+
+  section h1 {
+    font-size: 22px;
+  }
+
+  section h2 {
+    font-size: 17px;
+  }
+
+  nav a {
+    display: block;
+    margin: 10px 0;
+  }
+}
