@@ -1,5 +1,11 @@
-Absalem Aroon is a Cybersecurity student at the Federal University of Technology, Babura, Nigeria, and the Founder of Absalex Labs, an independent security research and consulting organization. He is a passionate Blockchain & Security Researcher with a focus on distributed systems security, cryptography, and emerging blockchain technologies.
+Absalem Aroon is a Cybersecurity student at the Federal University of Technology, Babura, Nigeria, and the Founder of Absalex Labs, an independent research and innovation organization focused on cybersecurity, blockchain systems, and emerging technologies.
 
-Absalem's expertise spans across cybersecurity infrastructure, blockchain security, and distributed computing. Through Absalex Labs, he conducts in-depth security research and provides consulting services to organizations seeking to strengthen their security posture. His work is driven by a commitment to advancing security practices in both traditional and decentralized systems.
+His interests lie at the intersection of cybersecurity, blockchain security, distributed systems, cryptography, and decentralized technologies. His work explores how secure and resilient systems can be designed, analyzed, and applied across both traditional and decentralized computing environments.
 
-As a cybersecurity professional, Absalem is dedicated to identifying and addressing security vulnerabilities in blockchain systems and distributed applications. He stays at the forefront of emerging threats and security best practices, contributing to the broader security community through research and education.
+Through Absalex Labs, Absalem conducts independent research and develops experimental projects focused on security, distributed computing, blockchain infrastructure, and emerging technological systems. His work combines theoretical investigation with practical experimentation, with an emphasis on understanding system architectures, identifying security weaknesses, and exploring approaches to building more reliable and resilient digital infrastructure.
+
+His current research interests include blockchain and distributed systems security, decentralized architectures, cryptographic systems, cybersecurity infrastructure, and the security implications of emerging technologies.
+
+Absalem is also interested in research-driven software development and technical education, using practical projects and experimentation to investigate complex problems in cybersecurity and computing.
+
+He is currently pursuing his studies in Cybersecurity at the Federal University of Technology, Babura, while developing Absalex Labs as a platform for independent research, experimentation, and collaboration.
