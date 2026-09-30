@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="theme-color" content="#050505">
+    <meta name="theme-color" content="#ffffff">
     {% seo %}
     <link rel="stylesheet" href="{{ "/assets/css/style.css?v=" | append: site.github.build_revision | relative_url }}">
     <link rel="stylesheet" href="{{ "/assets/css/custom.css" | relative_url }}">
@@ -11,28 +11,23 @@
   </head>
   <body>
     <div class="site-shell">
-      <header class="profile-header">
-        <div class="banner" role="img" aria-label="Research technology banner"></div>
-        <div class="profile-summary">
-          {% if site.logo %}<img class="profile-image" src="{{ site.logo | relative_url }}" alt="Portrait of Absalem Aroon">{% endif %}
-          <div class="profile-name-row">
-            <h1>Absalem Aroon</h1>
-          </div>
-        </div>
-        <nav class="site-nav" aria-label="Main navigation">
-          <a class="active" href="{{ "/" | relative_url }}">Home</a>
-          <a href="{{ "/research/" | relative_url }}">Research</a>
-          <a href="{{ "/software/" | relative_url }}">Software</a>
-          <a href="{{ "/publications/" | relative_url }}">Publications</a>
-          <a href="{{ "/certificates/" | relative_url }}">Certificates</a>
-          <a href="{{ "/blog/" | relative_url }}">Blog</a>
-        </nav>
+      <header class="profile-sidebar">
+        <h1><a href="{{ "/" | relative_url }}">Absalem Aroon</a></h1>
+        {% if site.logo %}<img class="profile-image" src="{{ site.logo | relative_url }}" alt="Portrait of Absalem Aroon">{% endif %}
+        <p class="profile-details">Department of Cyber Security<br>Federal University of Technology, Babura<br>Nigeria<br><a href="{{ "/certificates/" | relative_url }}">View certificates</a></p>
       </header>
-      <main class="content">{{ content }}</main>
-      <footer class="site-footer">
-        <span>© {{ 'now' | date: "%Y" }} Absalem Aroon</span>
-        <span>Absalex Labs · Nigeria</span>
-      </footer>
+      <main class="main-column">
+        <nav class="site-nav" aria-label="Main navigation">
+          <a class="{% if page.url == "/" or page.url == "/index.html" %}active{% endif %}" href="{{ "/" | relative_url }}">Home</a>
+          <a class="{% if page.url contains "/research" %}active{% endif %}" href="{{ "/research/" | relative_url }}">Research</a>
+          <a class="{% if page.url contains "/software" %}active{% endif %}" href="{{ "/software/" | relative_url }}">Software</a>
+          <a class="{% if page.url contains "/publications" %}active{% endif %}" href="{{ "/publications/" | relative_url }}">Publications</a>
+          <a class="{% if page.url contains "/certificates" %}active{% endif %}" href="{{ "/certificates/" | relative_url }}">Certificates</a>
+          <a class="{% if page.url contains "/blog" %}active{% endif %}" href="{{ "/blog/" | relative_url }}">Blog</a>
+        </nav>
+        <section class="content">{{ content }}</section>
+      </main>
+      <footer class="site-footer">© {{ 'now' | date: "%Y" }} Absalem Aroon · Absalex Labs</footer>
     </div>
   </body>
 </html>
