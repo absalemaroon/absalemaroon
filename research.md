@@ -6,8 +6,6 @@ author_profile: true
 comments: true
 ---
 
-[Home](../index) | [Research](../research) | [Software](../software) | [Publications](../publications) | [Blog](../blog)
-
 ### Research Focus Areas
 
 My research interests include:
