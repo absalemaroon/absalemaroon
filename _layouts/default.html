@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="theme-color" content="#111111">
+    <meta name="theme-color" content="#050505">
     {% seo %}
     <link rel="stylesheet" href="{{ "/assets/css/style.css?v=" | append: site.github.build_revision | relative_url }}">
     <link rel="stylesheet" href="{{ "/assets/css/custom.css" | relative_url }}">
@@ -11,27 +11,18 @@
   </head>
   <body>
     <div class="site-shell">
-      <header class="site-header">
-        <div class="header-inner">
-          <a class="brand" href="{{ "/" | relative_url }}" aria-label="Absalem Aroon home">
-            <span class="brand-mark">AA</span>
-            <span class="brand-name">Absalem Aroon</span>
-          </a>
-          <button class="theme-toggle" type="button" aria-label="Toggle color theme" aria-pressed="false">
-            <span class="theme-toggle-icon" aria-hidden="true">◐</span>
-            <span class="theme-toggle-label">Theme</span>
-          </button>
-        </div>
-        <div class="hero-inner">
-          <div class="hero-copy">
-            <p class="eyebrow">CYBERSECURITY · BLOCKCHAIN · RESEARCH</p>
-            <h1>{{ page.title | default: site.title }}</h1>
-            <p class="hero-description">{{ site.description | default: site.github.project_tagline }}</p>
-          </div>
+      <header class="profile-header">
+        <div class="banner" role="img" aria-label="Research technology banner"></div>
+        <div class="profile-summary">
           {% if site.logo %}<img class="profile-image" src="{{ site.logo | relative_url }}" alt="Portrait of Absalem Aroon">{% endif %}
+          <div class="profile-name-row">
+            <h1>Absalem Aroon</h1>
+            <span class="verified" aria-label="Verified profile">✓</span>
+          </div>
+          <p class="profile-location">Nigeria · Cybersecurity student · Blockchain researcher</p>
         </div>
         <nav class="site-nav" aria-label="Main navigation">
-          <a href="{{ "/" | relative_url }}">Home</a>
+          <a class="active" href="{{ "/" | relative_url }}">Home</a>
           <a href="{{ "/research/" | relative_url }}">Research</a>
           <a href="{{ "/software/" | relative_url }}">Software</a>
           <a href="{{ "/publications/" | relative_url }}">Publications</a>
@@ -45,6 +36,5 @@
         <span>Absalex Labs · Nigeria</span>
       </footer>
     </div>
-    <script src="{{ "/assets/js/theme-toggle.js" | relative_url }}"></script>
   </body>
 </html>
