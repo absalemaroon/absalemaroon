@@ -7,8 +7,6 @@ permalink: /blog/
 author_profile: true
 ---
 
-[Home](../index) | [Research](../research) | [Software](../software) | [Publications](../publications) | [Blog](../blog)
-
 <h1>Blog - Thinking Distributed</h1>
 
 <h2>Latest Posts</h2>

@@ -1,5 +1,3 @@
-[Home](../index) | [Research](../research) | [Software](../software) | [Publications](../publications) | [Blog](blog)
-
 ## Absalex Labs Projects
 
 Through Absalex Labs, I develop and maintain open-source tools and resources for the security community. This section will be updated as projects are released and made publicly available.
