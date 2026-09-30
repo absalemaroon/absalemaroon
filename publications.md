@@ -4,4 +4,3 @@ This section will feature published research papers, technical articles, and sec
 
 *Upcoming publications will be added here. Stay tuned for research papers, technical articles, and security advisories.*
 
-
