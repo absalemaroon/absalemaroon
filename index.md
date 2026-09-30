@@ -6,3 +6,4 @@ Absalem's expertise spans across cybersecurity infrastructure, blockchain securi
 
 As a cybersecurity professional, Absalem is dedicated to identifying and addressing security vulnerabilities in blockchain systems and distributed applications. He stays at the forefront of emerging threats and security best practices, contributing to the broader security community through research and education.
 
+find it ok https://www.anthropic.com
