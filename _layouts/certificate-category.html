@@ -6,16 +6,13 @@ layout: default
   <div class="certificate-list">
     {% assign certificates = site.certificates | where: "category_slug", page.slug | sort: "date" | reverse %}
     {% for certificate in certificates %}
+      {% assign certificate_link = certificate.external_url | default: certificate.url %}
       <article class="certificate-card">
-        {% assign certificate_link = certificate.external_url | default: certificate.url %}
         {% if certificate.image %}
           <a class="certificate-card__image-link" href="{{ certificate_link }}"{% if certificate.external_url %} target="_blank" rel="noopener noreferrer"{% endif %} aria-label="View {{ certificate.title }} certificate">
             <img src="{{ certificate.image | relative_url }}" alt="{{ certificate.title }} certificate thumbnail">
           </a>
         {% endif %}
-        <div class="certificate-card__title">
-          <h2><a href="{{ certificate_link }}"{% if certificate.external_url %} target="_blank" rel="noopener noreferrer"{% endif %}>{{ certificate.title }}</a></h2>
-        </div>
       </article>
     {% else %}
       <p>No certificates have been added to this category yet.</p>
