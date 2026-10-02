@@ -1,9 +1,12 @@
 :root {
   --page: #ffffff;
   --ink: #666666;
-  --heading: #287aa8;
+  --heading: #222222;
   --line: #e5e5e5;
-  --link: #287aa8;
+  --link: #222222;
+  --link-hover: #000000;
+  --accent: #222222;
+  --surface: #f2f2f2;
 }
 
 * { box-sizing: border-box; }
@@ -17,6 +20,7 @@ body {
   line-height: 1.7;
 }
 a { color: var(--link); }
+a:hover { color: var(--link-hover); }
 .site-shell {
   width: min(100% - 32px, 860px);
   margin: 0 auto;
@@ -64,7 +68,7 @@ a { color: var(--link); }
   text-decoration: none;
   white-space: nowrap;
 }
-.site-nav a:hover, .site-nav a:focus-visible, .site-nav a.active { color: #155577; text-decoration: underline; }
+.site-nav a:hover, .site-nav a:focus-visible, .site-nav a.active { color: var(--link-hover); text-decoration: underline; }
 .blog-page .site-nav { display: none; }
 .blog-page .main-column { padding-top: 0; }
 .blog-page .content { max-width: 100%; }
@@ -80,7 +84,7 @@ a { color: var(--link); }
 .post-title { margin: 0; }
 .post-meta { color: #777; font-size: 16px; margin: 14px 0 0; }
 .post-content img { height: auto; max-width: 100%; }
-.post-content blockquote { border-left: 3px solid #2563eb; color: #4b5563; margin: 24px 0; padding-left: 18px; }
+.post-content blockquote { border-left: 3px solid var(--accent); color: #555; margin: 24px 0; padding-left: 18px; }
 .page-intro { color: #777; margin-top: -8px; }
 .blog-list { display: grid; gap: 24px; }
 .blog-card { border-bottom: 1px solid var(--line); padding-bottom: 24px; }
@@ -90,14 +94,23 @@ a { color: var(--link); }
 .blog-date, .post-kicker { color: var(--link); font-size: 12px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
 .blog-excerpt { margin-bottom: 12px; }
 .blog-tags { display: flex; flex-wrap: wrap; gap: 6px; margin: 14px 0; }
-.blog-tags span { background: #f0f5f8; border-radius: 3px; color: #287aa8; font-size: 12px; padding: 3px 8px; }
+.blog-tags span { background: var(--surface); border-radius: 3px; color: #333; font-size: 12px; padding: 3px 8px; }
 .read-more { font-size: 14px; font-weight: 700; }
+.back-link { display: inline-block; font-size: 14px; font-weight: 600; margin-bottom: 18px; text-decoration: none; }
+.back-link:hover { text-decoration: underline; }
+.post-meta .blog-tags { margin: 10px 0 0; }
+.post-content pre { background: var(--surface); overflow-x: auto; padding: 14px; border-radius: 4px; }
+.post-content code { background: var(--surface); border-radius: 3px; padding: 1px 4px; }
+.post-content pre code { background: none; padding: 0; }
+.post-content figure { margin: 24px 0; }
+.post-content figcaption { color: #777; font-size: 14px; margin-top: 6px; text-align: center; }
+.post-content .references { font-size: 14px; }
 .blog-article .post-title { color: #555; }
 .post-content > *:last-child { margin-bottom: 0; }
 .certificate-category-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 22px; margin-top: 28px; }
 .certificate-category-card { display: flex; flex-direction: column; overflow: hidden; border: 1px solid var(--line); border-radius: 6px; color: inherit; text-decoration: none; transition: transform .2s ease, box-shadow .2s ease; }
 .certificate-category-card:hover, .certificate-category-card:focus-visible { transform: translateY(-3px); box-shadow: 0 8px 20px rgba(0,0,0,.08); }
-.certificate-category-card > img { width: 100%; aspect-ratio: 16 / 9; object-fit: cover; background: #e9eef1; }
+.certificate-category-card > img { width: 100%; aspect-ratio: 16 / 9; object-fit: cover; background: var(--surface); }
 .certificate-category-card__body { display: flex; flex-direction: column; gap: 8px; padding: 16px; }
 .certificate-category-card strong { color: #555; font-size: 18px; }
 .certificate-category-card span { color: #777; font-size: 14px; }
@@ -115,6 +128,7 @@ a { color: var(--link); }
 .content p { margin: 0 0 22px; }
 .content strong { color: #444; }
 .content a { color: var(--link); }
+a:hover { color: var(--link-hover); }
 .content img { max-width: 100%; height: auto; }
 .content blockquote { border-left: 3px solid var(--line); margin: 24px 0; padding-left: 18px; }
 @media (max-width: 760px) {
@@ -170,7 +184,7 @@ a { color: var(--link); }
 
 .social-icons a:hover,
 .social-icons a:focus-visible {
-  color: var(--heading);             /* #287aa8 on hover — matches your theme */
+  color: var(--heading);
   transform: translateY(-2px);
 }
 

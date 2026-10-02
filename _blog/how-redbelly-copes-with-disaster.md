@@ -1,7 +1,10 @@
 ---
 layout: blog
+title: "How Redbelly Copes with Disaster"
 author: Absalem Aroon
-tags: social_choice governance
+date: 2026-10-01
+description: "Why non-dictatorship matters for blockchain governance, and how a governance protocol can guarantee it."
+tags: [social-choice, governance]
 ---
 
 Non-dictatorship is a property that appeared in the work of Arrow back in 1950 [1]. We explain why it turns out to be a fundamental property of blockchain governance. We then explain how one can devise a governance protocol that ensures this property and refer to its smart contract implementation.
@@ -20,4 +23,4 @@ We have recently devised a blockchain governance protocol to allow the governanc
 
 [2] M. C. Pease, R. E. Shostak, and L. Lamport, [Reaching agreement in the presence of faults.](https://lamport.azurewebsites.net/pubs/reaching.pdf) J. ACM, vol. 27, no. 2, pp. 228–234, 1980.
 
-[3] D. Tennakoon, V. Gramoli. [Blockchain Proportional Governance Reconfiguration: Mitigating a Governance Oligarchy.](https://gramoli.github.io/pubs/CCGrid23-GovernanceReconfiguration.pdf) The 23rd IEEE/ACM International Symposium on Cluster, Cloud and Internet Computing (CCGrid), 2023. DOI:[10.1109/CCGrid57682.2023.00057](https://doi.org/10.1109/CCGrid57682.2023.00057)</a>.
+[3] D. Tennakoon, V. Gramoli. [Blockchain Proportional Governance Reconfiguration: Mitigating a Governance Oligarchy.](https://gramoli.github.io/pubs/CCGrid23-GovernanceReconfiguration.pdf) The 23rd IEEE/ACM International Symposium on Cluster, Cloud and Internet Computing (CCGrid), 2023. DOI:[10.1109/CCGrid57682.2023.00057](https://doi.org/10.1109/CCGrid57682.2023.00057).
