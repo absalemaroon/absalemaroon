@@ -20,8 +20,8 @@ Ready-to-copy templates are in the `_templates/` folder. Jekyll does not publish
 | `title`       | yes      | Post title. Keep it in `"double quotes"`.                       |
 | `author`      | yes      | Shown under the title.                                          |
 | `date`        | yes      | Format `YYYY-MM-DD`. Sets the order on the Blog page.           |
-| `description` | no       | Summary shown on the Blog list page. Recommended.               |
-| `tags`        | no       | `[tag-one, tag-two]`. Lowercase, dashes instead of spaces.      |
+| `description` | no       | Fallback summary, used only if the post has no first paragraph.               |
+| `tags`        | no       | `[tag-one, tag-two]`. Lowercase, dashes instead of spaces. Listed in the **Tags** section at the bottom of the Blog page.      |
 
 4. Replace the example text with your post and commit. GitHub Pages rebuilds the site in about a minute.
 
