@@ -9,3 +9,10 @@ collections:
   blog:
     output: true
     permalink: /blog/:title/
+
+defaults:
+  - scope:
+      path: ""
+      type: blog
+    values:
+      layout: blog
