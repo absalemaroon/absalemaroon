@@ -7,7 +7,8 @@ permalink: /blog/
 ---
 
 <h1>Blog</h1>
-<p class="page-intro">Notes and research on cybersecurity, blockchain, and distributed systems.</p>
+
+<h2>Latest Blog</h2>
 
 {% assign blog_entries = site.blog | sort: "date" | reverse %}
 {% if blog_entries.size > 0 %}
