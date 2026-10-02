@@ -1,6 +1,6 @@
 ---
-layout: post
-author: Vincent
+layout: blog
+author: Absalem Aroon
 tags: social_choice governance
 ---
 
