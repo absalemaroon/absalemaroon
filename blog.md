@@ -17,7 +17,9 @@ permalink: /blog/
       <article class="blog-card">
         <p class="blog-date">{{ entry.date | date: "%B %-d, %Y" }}</p>
         <h2><a href="{{ entry.url | relative_url }}">{{ entry.title }}</a></h2>
-        {% if entry.excerpt %}
+        {% if entry.description %}
+          <p class="blog-excerpt">{{ entry.description }}</p>
+        {% elsif entry.excerpt %}
           <div class="blog-excerpt">{{ entry.excerpt }}</div>
         {% endif %}
         {% if entry.tags %}

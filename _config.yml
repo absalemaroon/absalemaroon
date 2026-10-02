@@ -4,6 +4,13 @@ logo: img/absalem-aroon.jpg
 timezone: Africa/Lagos
 description: Department of Cyber Security <br /> Federal University of Technology, Babura <br /> Nigeria<br />Founder, Absalex Labs<br />
 
+exclude:
+  - CONTENT-GUIDE.md
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - vendor
+
 # Notice there are NO spaces before 'collections'
 collections:
   blog:
