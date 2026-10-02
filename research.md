@@ -1,9 +1,7 @@
 ---
-title:  "Research & Speaking"
+title: "Research & Speaking"
 layout: default
 permalink: /research/
-author_profile: true
-comments: true
 ---
 
 ### Research Focus Areas
