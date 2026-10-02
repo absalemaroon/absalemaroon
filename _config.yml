@@ -12,6 +12,9 @@ collections:
   certificates:
     output: true
     permalink: /certificates/:path/
+  certificate_categories:
+    output: true
+    permalink: /certificates/category/:name/
 
 defaults:
   - scope:
@@ -24,3 +27,8 @@ defaults:
       type: certificates
     values:
       layout: default
+  - scope:
+      path: ""
+      type: certificate_categories
+    values:
+      layout: certificate-category
