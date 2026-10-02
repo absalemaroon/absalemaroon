@@ -90,3 +90,37 @@ a { color: var(--link); }
   .site-footer { margin-top: 30px; }
 }
 @media (prefers-reduced-motion: reduce) { * { scroll-behavior: auto !important; } }
+
+
+
+/* Social icons in profile sidebar */
+.social-icons {
+  display: flex;
+  gap: 10px;
+  margin-top: 12px;
+  align-items: center;
+}
+
+.social-icons a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  color: #999;                       /* icon color */
+  background-color: transparent;
+  text-decoration: none;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.social-icons a:hover,
+.social-icons a:focus-visible {
+  color: var(--heading);             /* #287aa8 on hover — matches your theme */
+  transform: translateY(-2px);
+}
+
+.social-icons svg {
+  width: 20px;
+  height: 20px;
+  fill: currentColor;                /* inherits the #999 / hover color */
+}
