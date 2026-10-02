@@ -11,7 +11,8 @@ author_profile: true
 
 <h2>Latest Blog</h2>
 <ul>
-  {% for post in site.posts %}
+  {% assign blog_entries = site.blog | sort: "date" | reverse %}
+  {% for post in blog_entries %}
     <li>
       <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
       {{ post.excerpt }}
