@@ -8,27 +8,46 @@ permalink: /blog/
 
 <h1>Blog</h1>
 
-<h2>Latest Blog</h2>
-
 {% assign blog_entries = site.blog | sort: "date" | reverse %}
+
+<h2>Latest Posts</h2>
 {% if blog_entries.size > 0 %}
-  <div class="blog-list">
-    {% for entry in blog_entries %}
-      <article class="blog-card">
-        <p class="blog-date">{{ entry.date | date: "%B %-d, %Y" }}</p>
-        <h2><a href="{{ entry.url | relative_url }}">{{ entry.title }}</a></h2>
-        {% if entry.description %}
-          <p class="blog-excerpt">{{ entry.description }}</p>
-        {% elsif entry.excerpt %}
-          <div class="blog-excerpt">{{ entry.excerpt }}</div>
-        {% endif %}
-        {% if entry.tags %}
-          <p class="blog-tags">{% for tag in entry.tags %}<span>{{ tag }}</span>{% endfor %}</p>
-        {% endif %}
-        <a class="read-more" href="{{ entry.url | relative_url }}">Read article</a>
-      </article>
-    {% endfor %}
-  </div>
+<ul class="blog-list">
+  {% for entry in blog_entries %}
+    <li class="blog-card">
+      <h3><a href="{{ entry.url | relative_url }}">{{ entry.title }}</a></h3>
+      {% if entry.excerpt %}
+        <div class="blog-excerpt">{{ entry.excerpt }}</div>
+      {% elsif entry.description %}
+        <p class="blog-excerpt">{{ entry.description }}</p>
+      {% endif %}
+    </li>
+  {% endfor %}
+</ul>
 {% else %}
-  <p>No blog articles have been published yet.</p>
+<p>No blog posts have been published yet.</p>
+{% endif %}
+
+{% assign all_tags = "" %}
+{% for entry in blog_entries %}
+  {% for tag in entry.tags %}
+    {% assign all_tags = all_tags | append: tag | append: "|" %}
+  {% endfor %}
+{% endfor %}
+{% assign tag_list = all_tags | split: "|" | uniq | sort %}
+
+{% if tag_list.size > 0 %}
+<h2>Tags</h2>
+<ul class="tag-index">
+  {% for tag in tag_list %}
+    <li id="tag-{{ tag | slugify }}">
+      <strong>{{ tag }}</strong>
+      {% for entry in blog_entries %}
+        {% if entry.tags contains tag %}
+          <a href="{{ entry.url | relative_url }}">{{ entry.title }}</a>&nbsp;
+        {% endif %}
+      {% endfor %}
+    </li>
+  {% endfor %}
+</ul>
 {% endif %}

@@ -86,11 +86,14 @@ a:hover { color: var(--link-hover); }
 .post-content img { height: auto; max-width: 100%; }
 .post-content blockquote { border-left: 3px solid var(--accent); color: #555; margin: 24px 0; padding-left: 18px; }
 .page-intro { color: #777; margin-top: -8px; }
-.blog-list { display: grid; gap: 24px; }
+.blog-list { display: grid; gap: 24px; list-style: none; padding-left: 0; }
 .blog-card { border-bottom: 1px solid var(--line); padding-bottom: 24px; }
-.blog-card h2 { margin: 4px 0 10px; }
-.blog-card h2 a { color: #555; text-decoration: none; }
-.blog-card h2 a:hover { color: var(--link); }
+.blog-card h2, .blog-card h3 { margin: 4px 0 10px; }
+.blog-card h2 a, .blog-card h3 a { color: #555; text-decoration: none; }
+.blog-card h2 a:hover, .blog-card h3 a:hover { color: var(--link); }
+.tag-index { padding-left: 18px; }
+.tag-index li { margin-bottom: 8px; }
+.tag-index strong { margin-right: 8px; }
 .blog-date, .post-kicker { color: var(--link); font-size: 12px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
 .blog-excerpt { margin-bottom: 12px; }
 .blog-tags { display: flex; flex-wrap: wrap; gap: 6px; margin: 14px 0; }
