@@ -4,33 +4,24 @@ layout: default
 permalink: /certificates/
 ---
 
-# Certifications
+# Certificates
 
-<p class="page-intro">Browse certificates by category.</p>
+<p class="page-intro">Choose a category to browse the certificates in that collection.</p>
 
-{% assign certificate_categories = site.certificates | map: "category" | uniq | sort %}
-<nav class="certificate-categories" aria-label="Certificate categories">
-  {% for category in certificate_categories %}
-    <a href="#{{ category | slugify }}">{{ category }}</a>
+<div class="certificate-category-grid">
+  {% assign categories = site.certificate_categories | sort: "title" %}
+  {% for category in categories %}
+    <a class="certificate-category-card" href="{{ category.url | relative_url }}">
+      {% if category.thumbnail %}
+        <img src="{{ category.thumbnail | relative_url }}" alt="{{ category.title }} category thumbnail">
+      {% endif %}
+      <span class="certificate-category-card__body">
+        <strong>{{ category.title }}</strong>
+        {% if category.description %}<span>{{ category.description }}</span>{% endif %}
+        <small>View certificates</small>
+      </span>
+    </a>
+  {% else %}
+    <p>No certificate categories have been added yet.</p>
   {% endfor %}
-</nav>
-
-{% for category in certificate_categories %}
-  <section class="certificate-category" id="{{ category | slugify }}">
-    <h2>{{ category }}</h2>
-    <div class="certificate-grid">
-      {% assign category_certificates = site.certificates | where: "category", category | sort: "date" | reverse %}
-      {% for certificate in category_certificates %}
-        <article class="certificate-card">
-          {% if certificate.image %}<img src="{{ certificate.image | relative_url }}" alt="{{ certificate.title }} certificate">{% endif %}
-          <div>
-            <h3><a href="{{ certificate.url | relative_url }}">{{ certificate.title }}</a></h3>
-            {% if certificate.provider %}<p class="certificate-provider">{{ certificate.provider }}</p>{% endif %}
-            {% if certificate.date %}<p class="certificate-date">{{ certificate.date | date: "%B %Y" }}</p>{% endif %}
-            <a class="read-more" href="{{ certificate.url | relative_url }}">View certificate</a>
-          </div>
-        </article>
-      {% endfor %}
-    </div>
-  </section>
-{% endfor %}
+</div>
