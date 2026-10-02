@@ -1,20 +1,20 @@
 ---
 layout: default
+title: Blog
 author: Absalem Aroon
-title: Blog - Research Distributed System
-description: This blog aims at being thought provoking and covers subjects related to research and distributed system of blockchain technology.
+description: Notes and research from Absalem Aroon on cybersecurity, blockchain, and distributed systems.
 permalink: /blog/
 author_profile: true
 ---
 
-<h1>Blog - Research Distributed System</h1>
+<h1>Blog</h1>
 
 <h2>Latest Blog</h2>
 <ul>
-  {% for blog in site.blog %}
+  {% for post in site.posts %}
     <li>
-      <h3><a href="{{ blog.url }}">{{ blog.title }}</a></h3>
-      {{ blog.excerpt }}
+      <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
+      {{ post.excerpt }}
     </li>
   {% endfor %}
 </ul>
@@ -23,9 +23,9 @@ author_profile: true
 <ul>
 {% for tag in site.tags %}
   <li>
-  {{ tag[0] }}
-    {% for blog in tag[1] %}
-      <a href="{{ blog.url }}">{{ blog.title }}</a>&nbsp;
+    {{ tag[0] }}
+    {% for post in tag[1] %}
+      <a href="{{ post.url | relative_url }}">{{ post.title }}</a>&nbsp;
     {% endfor %}
   </li>
 {% endfor %}
