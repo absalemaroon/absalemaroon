@@ -1,6 +1,6 @@
 ---
 layout: blog
-title: Blockchain: A Complete Guide
+title: Blockchain - A Complete Guide
 author: Absalem Aroon
 date: 2026-07-13
 tags: [blockchain, research]
