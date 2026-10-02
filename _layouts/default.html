@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="{{ "/assets/css/custom.css" | relative_url }}">
     {% include head-custom.html %}
   </head>
-  <body>
+  <body class="{{ page.layout | default: 'default' }}-page">
     <div class="site-shell">
       <header class="profile-sidebar">
         <h1><a href="{{ "/" | relative_url }}">Absalem Aroon</a></h1>
