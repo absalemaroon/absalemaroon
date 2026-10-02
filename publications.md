@@ -1,3 +1,9 @@
+---
+title: "Publications"
+layout: default
+permalink: /publications/
+---
+
 ## Publications & Research Papers
 
 This section will feature published research papers, technical articles, and security advisories. As my research progresses, papers on blockchain security, distributed systems, and cryptographic applications will be published here.
