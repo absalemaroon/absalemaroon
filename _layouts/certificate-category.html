@@ -1,0 +1,31 @@
+---
+layout: default
+---
+
+<article class="certificate-category-page">
+  <a class="back-link" href="{{ "/certificates/" | relative_url }}">← All certificate categories</a>
+  <header class="certificate-category-header">
+    {% if page.thumbnail %}<img src="{{ page.thumbnail | relative_url }}" alt="{{ page.title }} category thumbnail">{% endif %}
+    <div>
+      <p class="post-kicker">Certificate collection</p>
+      <h1>{{ page.title }}</h1>
+      {% if page.description %}<p class="page-intro">{{ page.description }}</p>{% endif %}
+    </div>
+  </header>
+  <div class="certificate-list">
+    {% assign certificates = site.certificates | where: "category_slug", page.slug | sort: "date" | reverse %}
+    {% for certificate in certificates %}
+      <article class="certificate-card">
+        {% if certificate.image %}<img src="{{ certificate.image | relative_url }}" alt="{{ certificate.title }} certificate thumbnail">{% endif %}
+        <div>
+          <p class="certificate-date">{{ certificate.date | date: "%B %Y" }}</p>
+          <h2><a href="{{ certificate.url | relative_url }}">{{ certificate.title }}</a></h2>
+          {% if certificate.provider %}<p class="certificate-provider">{{ certificate.provider }}</p>{% endif %}
+          <a class="read-more" href="{{ certificate.url | relative_url }}">View certificate details</a>
+        </div>
+      </article>
+    {% else %}
+      <p>No certificates have been added to this category yet.</p>
+    {% endfor %}
+  </div>
+</article>

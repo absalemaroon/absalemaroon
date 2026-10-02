@@ -1,6 +1,7 @@
 ---
 title: "The Fundamentals of Crypto & Blockchain"
 category: "Blockchain & Web3"
+category_slug: blockchain-web3
 provider: "Binance Academy"
 date: 2026-01-01
 image: "/img/binance-certificate.jpg"
