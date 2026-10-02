@@ -92,6 +92,25 @@ a { color: var(--link); }
 @media (prefers-reduced-motion: reduce) { * { scroll-behavior: auto !important; } }
 
 
+/* banner footer */
+.site-footer {
+  grid-column: 2;
+  border-top: 1px solid var(--line);
+  color: #999;
+  font-size: 12px;
+  margin-top: 36px;
+  padding-top: 14px;
+  text-align: center;
+}
+
+.site-footer img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+
 
 /* Social icons in profile sidebar */
 .social-icons {
