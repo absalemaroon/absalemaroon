@@ -9,6 +9,9 @@ collections:
   blog:
     output: true
     permalink: /blog/:title/
+  certificates:
+    output: true
+    permalink: /certificates/:path/
 
 defaults:
   - scope:
@@ -16,3 +19,8 @@ defaults:
       type: blog
     values:
       layout: blog
+  - scope:
+      path: ""
+      type: certificates
+    values:
+      layout: default
