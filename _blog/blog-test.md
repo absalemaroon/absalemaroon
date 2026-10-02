@@ -1,6 +1,6 @@
 ---
 layout: blog
-title: •"Blockchain Explained: How It Works and Why It Matters"
+title: "Blockchain Explained: How It Works and Why It Matters"
 author: Absalem Aroon
 date: 2026-07-13
 ---
