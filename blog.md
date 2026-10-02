@@ -1,15 +1,15 @@
 ---
 layout: default
-author: Vincent Gramoli
-title: Blog - Thinking Distributed 
-description: This blog aims at being thought provoking and covers subjects related to the distributed nature of blockchain systems.
+author: Absalem Aroon
+title: Blog - Research Distributed System
+description: This blog aims at being thought provoking and covers subjects related to research and distributed system of blockchain technology.
 permalink: /blog/
 author_profile: true
 ---
 
-<h1>Blog - Thinking Distributed</h1>
+<h1>Blog - Research Distributed System</h1>
 
-<h2>Latest Posts</h2>
+<h2>Latest Blog</h2>
 <ul>
   {% for post in site.posts %}
     <li>
