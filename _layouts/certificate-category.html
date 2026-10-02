@@ -13,11 +13,8 @@ layout: default
             <img src="{{ certificate.image | relative_url }}" alt="{{ certificate.title }} certificate thumbnail">
           </a>
         {% endif %}
-        <div>
-          <p class="certificate-date">{{ certificate.date | date: "%B %Y" }}</p>
+        <div class="certificate-card__title">
           <h2><a href="{{ certificate_link }}"{% if certificate.external_url %} target="_blank" rel="noopener noreferrer"{% endif %}>{{ certificate.title }}</a></h2>
-          {% if certificate.provider %}<p class="certificate-provider">{{ certificate.provider }}</p>{% endif %}
-          <a class="read-more" href="{{ certificate_link }}"{% if certificate.external_url %} target="_blank" rel="noopener noreferrer"{% endif %}>View certificate details</a>
         </div>
       </article>
     {% else %}
