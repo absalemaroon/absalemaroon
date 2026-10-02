@@ -11,10 +11,10 @@ author_profile: true
 
 <h2>Latest Blog</h2>
 <ul>
-  {% for post in site.posts %}
+  {% for blog in site.blog %}
     <li>
-      <h3><a href="{{ post.url }}">{{ post.title }}</a></h3>
-      {{ post.excerpt }}
+      <h3><a href="{{ blog.url }}">{{ blog.title }}</a></h3>
+      {{ blog.excerpt }}
     </li>
   {% endfor %}
 </ul>
@@ -24,10 +24,9 @@ author_profile: true
 {% for tag in site.tags %}
   <li>
   {{ tag[0] }}
-    {% for post in tag[1] %}
-      <a href="{{ post.url }}">{{ post.title }}</a>&nbsp;
+    {% for blog in tag[1] %}
+      <a href="{{ blog.url }}">{{ blog.title }}</a>&nbsp;
     {% endfor %}
   </li>
 {% endfor %}
 </ul>
-
