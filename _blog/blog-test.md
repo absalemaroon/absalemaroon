@@ -1,9 +1,9 @@
 ---
 layout: blog
-title: Blockchain - A Complete Guide
+title: "Blockchain Explained: How It Works and Why It Matters"
 author: Absalem Aroon
 date: 2026-07-13
-___
+---
 A blockchain is a distributed, decentralized digital ledger that records transactions across many computers in such a way that the recorded data cannot be altered retroactively without altering all subsequent blocks and the consensus of the network. Since its introduction as the technology behind Bitcoin in 2008, blockchain has grown into a foundational tool for secure, transparent, and tamper-resistant record-keeping across finance, supply chains, healthcare, governance, and beyond.
 
 This guide covers what blockchain is, how it works, its key components, types, consensus mechanisms, real-world applications, advantages, limitations, and future directions.
@@ -16,11 +16,11 @@ At its core, a blockchain is a chain of blocks, where each block contains a set 
 
 Key properties:
 
-· Decentralization — No single authority controls the ledger.
-· Immutability — Once recorded, data is extremely difficult to change.
-· Transparency — Participants can verify transactions (depending on the type of blockchain).
-· Security — Cryptographic hashing and consensus protect against tampering.
-· Auditability — Every transaction has a traceable history.
+- Decentralization — No single authority controls the ledger.
+- Immutability — Once recorded, data is extremely difficult to change.
+- Transparency — Participants can verify transactions (depending on the type of blockchain).
+- Security — Cryptographic hashing and consensus protect against tampering.
+- Auditability — Every transaction has a traceable history.
 
 ---
 
@@ -45,11 +45,11 @@ A blockchain operates through a repeating cycle:
 
 Each block typically contains:
 
-· A block header (metadata)
-· A list of transactions
-· The hash of the previous block
-· A timestamp
-· A nonce or other consensus-related value
+- A block header (metadata)
+- A list of transactions
+- The hash of the previous block
+- A timestamp
+- A nonce or other consensus-related value
 
 3.2 Cryptographic Hash Functions
 
@@ -61,8 +61,8 @@ A Merkle tree efficiently summarizes transactions in a block. It allows quick ve
 
 3.4 Public and Private Keys
 
-· Private key — Used to sign transactions.
-· Public key — Used to verify signatures and derive addresses.
+- Private key — Used to sign transactions.
+- Public key — Used to verify signatures and derive addresses.
 
 3.5 Nodes
 
@@ -78,26 +78,26 @@ Rules that allow distributed nodes to agree on the state of the ledger.
 
 4.1 Public (Permissionless)
 
-· Open to anyone.
-· Examples: Bitcoin, Ethereum.
-· High transparency, high decentralization, lower throughput.
+- Open to anyone.
+- Examples: Bitcoin, Ethereum.
+- High transparency, high decentralization, lower throughput.
 
 4.2 Private (Permissioned)
 
-· Controlled by a single organization.
-· Faster, more private, less decentralized.
-· Examples: Hyperledger Fabric in enterprise settings.
+- Controlled by a single organization.
+- Faster, more private, less decentralized.
+- Examples: Hyperledger Fabric in enterprise settings.
 
 4.3 Consortium
 
-· Governed by a group of organizations.
-· Balances decentralization with control.
-· Common in banking and supply chain consortia.
+- Governed by a group of organizations.
+- Balances decentralization with control.
+- Common in banking and supply chain consortia.
 
 4.4 Hybrid
 
-· Combines public and private features.
-· Allows selective transparency and access control.
+- Combines public and private features.
+- Allows selective transparency and access control.
 
 ---
 
@@ -125,10 +125,10 @@ Trusted validators are pre-approved. Fast and efficient, suited to private chain
 
 5.6 Other Mechanisms
 
-· Proof of Space/Time
-· Proof of Burn
-· Proof of History (Solana)
-· Avalanche consensus
+- Proof of Space/Time
+- Proof of Burn
+- Proof of History (Solana)
+- Avalanche consensus
 
 ---
 
@@ -138,26 +138,26 @@ Smart contracts are self-executing programs stored on a blockchain that run when
 
 Features:
 
-· Automatic execution
-· Immutable once deployed (unless upgradeable patterns are used)
-· Transparent logic
-· Enable decentralized applications (dApps)
+- Automatic execution
+- Immutable once deployed (unless upgradeable patterns are used)
+- Transparent logic
+- Enable decentralized applications (dApps)
 
 Platforms:
 
-· Ethereum (Solidity)
-· Solana (Rust)
-· Cardano (Plutus)
-· Polkadot (Substrate)
-· Hyperledger (chaincode)
+- Ethereum (Solidity)
+- Solana (Rust)
+- Cardano (Plutus)
+- Polkadot (Substrate)
+- Hyperledger (chaincode)
 
 Use cases:
 
-· DeFi (lending, DEXs, stablecoins)
-· NFTs
-· DAOs
-· Tokenization of real-world assets
-· Automated insurance payouts
+- DeFi (lending, DEXs, stablecoins)
+- NFTs
+- DAOs
+- Tokenization of real-world assets
+- Automated insurance payouts
 
 ---
 
@@ -165,58 +165,58 @@ Use cases:
 
 7.1 Finance
 
-· Cross-border payments
-· CBDCs (central bank digital currencies)
-· Tokenized securities
-· DeFi protocols
+- Cross-border payments
+- CBDCs (central bank digital currencies)
+- Tokenized securities
+- DeFi protocols
 
 7.2 Supply Chain
 
-· Provenance tracking (food, pharmaceuticals, luxury goods)
-· Anti-counterfeiting
-· Logistics transparency
+- Provenance tracking (food, pharmaceuticals, luxury goods)
+- Anti-counterfeiting
+- Logistics transparency
 
 7.3 Healthcare
 
-· Secure patient records
-· Drug traceability
-· Clinical trial integrity
+- Secure patient records
+- Drug traceability
+- Clinical trial integrity
 
 7.4 Government
 
-· Digital identity
-· Voting systems
-· Land registries
-· Public procurement transparency
+- Digital identity
+- Voting systems
+- Land registries
+- Public procurement transparency
 
 7.5 Energy
 
-· Peer-to-peer energy trading
-· Renewable energy certificates
-· Carbon credit tracking
+- Peer-to-peer energy trading
+- Renewable energy certificates
+- Carbon credit tracking
 
 7.6 Media and Entertainment
 
-· Royalty distribution
-· Content provenance
-· NFT-based ownership
+- Royalty distribution
+- Content provenance
+- NFT-based ownership
 
 7.7 Education
 
-· Verifiable credentials and diplomas
-· Lifelong learning records
+- Verifiable credentials and diplomas
+- Lifelong learning records
 
 ---
 
 8. Advantages of Blockchain
 
-· Trust without intermediaries — Removes need for central authorities.
-· Transparency — Public ledgers allow anyone to audit.
-· Immutability — Records are effectively permanent.
-· Security — Cryptographic protection.
-· Resilience — No single point of failure.
-· Programmability — Smart contracts enable automation.
-· Global accessibility — Open to anyone with internet access.
+- Trust without intermediaries — Removes need for central authorities.
+- Transparency — Public ledgers allow anyone to audit.
+- Immutability — Records are effectively permanent.
+- Security — Cryptographic protection.
+- Resilience — No single point of failure.
+- Programmability — Smart contracts enable automation.
+- Global accessibility — Open to anyone with internet access.
 
 ---
 
@@ -244,9 +244,9 @@ Public ledgers expose transaction histories; privacy coins and zero-knowledge pr
 
 9.6 Security Risks
 
-· Smart contract bugs
-· 51% attacks on small chains
-· Phishing and private key theft
+- Smart contract bugs
+- 51% attacks on small chains
+- Phishing and private key theft
 
 9.7 Interoperability
 
@@ -260,20 +260,20 @@ Decentralized governance is slow and contentious.
 
 10. Layer 2 and Scaling Solutions
 
-· Rollups (Optimistic, ZK) — Bundle transactions off-chain, settle on-chain.
-· Sidechains — Independent chains pegged to a main chain.
-· State channels — Off-chain transaction channels (e.g., Lightning Network).
-· Sharding — Splits the chain into parallel segments.
-· Modular blockchains — Separate execution, settlement, consensus, and data availability.
+- Rollups (Optimistic, ZK) — Bundle transactions off-chain, settle on-chain.
+- Sidechains — Independent chains pegged to a main chain.
+- State channels — Off-chain transaction channels (e.g., Lightning Network).
+- Sharding — Splits the chain into parallel segments.
+- Modular blockchains — Separate execution, settlement, consensus, and data availability.
 
 ---
 
 11. Privacy and Zero-Knowledge Proofs
 
-· zk-SNARKs — Succinct non-interactive proofs.
-· zk-STARKs — Transparent, scalable proofs.
-· Confidential transactions — Hide amounts while verifying validity.
-· Mixers and privacy coins — Monero, Zcash, Tornado-style tools (with regulatory scrutiny).
+- zk-SNARKs — Succinct non-interactive proofs.
+- zk-STARKs — Transparent, scalable proofs.
+- Confidential transactions — Hide amounts while verifying validity.
+- Mixers and privacy coins — Monero, Zcash, Tornado-style tools (with regulatory scrutiny).
 
 ---
 
@@ -281,22 +281,22 @@ Decentralized governance is slow and contentious.
 
 Emerging intersections:
 
-· Verifiable AI models and data provenance
-· Decentralized compute and data marketplaces
-· AI-driven smart contracts
-· Tokenized AI agents
-· On-chain reputation systems
+- Verifiable AI models and data provenance
+- Decentralized compute and data marketplaces
+- AI-driven smart contracts
+- Tokenized AI agents
+- On-chain reputation systems
 
 ---
 
 13. Regulation and Compliance
 
-· FATF travel rule for VASPs
-· MiCA in the EU
-· SEC and CFTC oversight in the US
-· CBDC pilots worldwide
-· AML/KYC integration in exchanges
-· Tax treatment of crypto assets
+- FATF travel rule for VASPs
+- MiCA in the EU
+- SEC and CFTC oversight in the US
+- CBDC pilots worldwide
+- AML/KYC integration in exchanges
+- Tax treatment of crypto assets
 
 ---
 
@@ -304,57 +304,57 @@ Emerging intersections:
 
 Learn
 
-· Blockchain fundamentals
-· Cryptography basics
-· Smart contract languages (Solidity, Rust, Vyper)
-· Web3 libraries (ethers.js, web3.js, wagmi)
+- Blockchain fundamentals
+- Cryptography basics
+- Smart contract languages (Solidity, Rust, Vyper)
+- Web3 libraries (ethers.js, web3.js, wagmi)
 
 Tools
 
-· Hardhat, Foundry, Truffle
-· Remix IDE
-· Ganache, Anvil
-· IPFS, Arweave
-· The Graph
+- Hardhat, Foundry, Truffle
+- Remix IDE
+- Ganache, Anvil
+- IPFS, Arweave
+- The Graph
 
 Build
 
-· Simple dApp
-· ERC-20 / ERC-721 token
-· DAO
-· DeFi protocol
-· NFT marketplace
+- Simple dApp
+- ERC-20 / ERC-721 token
+- DAO
+- DeFi protocol
+- NFT marketplace
 
 Deploy
 
-· Testnets (Sepolia, Goerli successors, Holesky)
-· Mainnet
-· Layer 2s (Arbitrum, Optimism, Base, zkSync)
+- Testnets (Sepolia, Goerli successors, Holesky)
+- Mainnet
+- Layer 2s (Arbitrum, Optimism, Base, zkSync)
 
 ---
 
 15. Career and Research Paths
 
-· Blockchain developer
-· Smart contract auditor
-· Protocol researcher
-· Cryptoeconomist
-· Security engineer
-· Compliance and policy analyst
-· Web3 product manager
+- Blockchain developer
+- Smart contract auditor
+- Protocol researcher
+- Cryptoeconomist
+- Security engineer
+- Compliance and policy analyst
+- Web3 product manager
 
 ---
 
 16. Future Directions
 
-· Interoperability across chains
-· Account abstraction for smoother UX
-· Real-world asset tokenization
-· Decentralized identity (DID)
-· CBDCs and hybrid money systems
-· Zero-knowledge everything
-· Quantum-resistant cryptography
-· Green and low-energy consensus
+- Interoperability across chains
+- Account abstraction for smoother UX
+- Real-world asset tokenization
+- Decentralized identity (DID)
+- CBDCs and hybrid money systems
+- Zero-knowledge everything
+- Quantum-resistant cryptography
+- Green and low-energy consensus
 
 ---
 
@@ -366,11 +366,11 @@ Blockchain is more than cryptocurrency. It is a general-purpose technology for t
 
 Further Reading
 
-· Mastering Bitcoin — Andreas M. Antonopoulos
-· Mastering Ethereum — Antonopoulos & Wood
-· The Bitcoin Whitepaper — Satoshi Nakamoto
-· Ethereum Whitepaper — Vitalik Buterin
-· Ethereum.org developer docs
-· Bitcoin.org developer guide
-· Consensys Academy
-· Chainlink documentation
+- Mastering Bitcoin — Andreas M. Antonopoulos
+- Mastering Ethereum — Antonopoulos & Wood
+- The Bitcoin Whitepaper — Satoshi Nakamoto
+- Ethereum Whitepaper — Vitalik Buterin
+- Ethereum.org developer docs
+- Bitcoin.org developer guide
+- Consensys Academy
+- Chainlink documentation
