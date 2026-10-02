@@ -21,6 +21,7 @@
 html { background: var(--page); }
 body {
   margin: 0;
+  padding: 0;
   background: var(--page);
   color: var(--ink);
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
@@ -29,6 +30,26 @@ body {
 }
 a { color: var(--link); }
 a:hover { color: var(--link-hover); }
+a:focus-visible {
+  outline: 2px solid var(--heading);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+/* Plain Markdown links in page text: always underlined so they read as clickable.
+   :where() keeps specificity low so component links (cards, titles) keep their own style. */
+:where(.content) a:not([class]) {
+  text-decoration: underline;
+  text-decoration-color: #b0b0b0;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+  transition: text-decoration-color .15s ease;
+}
+:where(.content) a:not([class]):hover {
+  color: var(--link-hover);
+  text-decoration-color: currentColor;
+  text-decoration-thickness: 2px;
+}
 
 /* ==========================================================================
    Page shell: sidebar + main column + footer
@@ -44,8 +65,20 @@ a:hover { color: var(--link-hover); }
 }
 .main-column { min-width: 0; }
 
-/* Sidebar */
-.profile-sidebar { min-width: 0; }
+/* The minimal theme styles every header/section/footer element (fixed header,
+   500px floated section, fixed footer). Those rules break this grid and cause
+   sideways scrolling in desktop view, so they are neutralised here. */
+.content { float: none; width: auto; margin: 0; padding: 0; border: 0; }
+
+/* Sidebar: stays in view while the main column scrolls, like the original site. */
+.profile-sidebar {
+  min-width: 0;
+  position: sticky;
+  top: 32px;
+  float: none;
+  width: auto;
+  padding: 0;
+}
 .profile-sidebar h1 {
   margin: 0 0 16px;
   color: var(--heading);
@@ -85,25 +118,36 @@ a:hover { color: var(--link-hover); }
 .site-nav {
   display: flex;
   justify-content: space-between;
-  gap: 18px;
+  gap: 6px;
   border-bottom: 1px solid var(--line);
-  padding: 3px 10px 10px;
+  padding: 0 0 8px;
   margin-bottom: 24px;
 }
 .site-nav a {
-  color: var(--link);
+  padding: 4px 8px;
+  border-radius: 4px;
+  color: var(--muted);
   font-size: 14px;
   font-weight: 500;
   letter-spacing: 0.01em;
   text-decoration: none;
   white-space: nowrap;
+  transition: background-color .15s ease, color .15s ease;
 }
-.site-nav a:hover,
-.site-nav a:focus-visible,
-.site-nav a.active { color: var(--link-hover); text-decoration: underline; }
+.site-nav a:hover { background: var(--surface); color: var(--link-hover); }
+.site-nav a.active {
+  color: var(--heading);
+  font-weight: 700;
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 6px;
+}
 
 /* Footer banner */
 .site-footer {
+  position: static;
+  float: none;
+  width: auto;
   grid-column: 2;
   border-top: 1px solid var(--line);
   margin-top: 36px;
@@ -219,10 +263,11 @@ a:hover { color: var(--link-hover); }
    ========================================================================== */
 @media (max-width: 760px) {
   .site-shell { display: block; width: min(100% - 36px, 620px); padding: 32px 0; }
+  .profile-sidebar { position: static; }
   .profile-sidebar h1 { font-size: 28px; }
   .profile-image { width: 100%; max-width: 300px; height: auto; aspect-ratio: 0.87; }
   .main-column { margin-top: 34px; }
-  .site-nav { justify-content: flex-start; overflow-x: auto; padding-inline: 0; }
+  .site-nav { flex-wrap: wrap; justify-content: flex-start; gap: 4px; }
   .site-footer { margin-top: 30px; }
   .blog-page .profile-sidebar { border-bottom: 1px solid var(--line); padding-bottom: 34px; }
   .blog-page .profile-image { max-width: 100%; aspect-ratio: 3 / 2; }
