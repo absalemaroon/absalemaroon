@@ -3,7 +3,7 @@ layout: blog
 title: Blockchain - A Complete Guide
 author: Absalem Aroon
 date: 2026-07-13
-
+___
 A blockchain is a distributed, decentralized digital ledger that records transactions across many computers in such a way that the recorded data cannot be altered retroactively without altering all subsequent blocks and the consensus of the network. Since its introduction as the technology behind Bitcoin in 2008, blockchain has grown into a foundational tool for secure, transparent, and tamper-resistant record-keeping across finance, supply chains, healthcare, governance, and beyond.
 
 This guide covers what blockchain is, how it works, its key components, types, consensus mechanisms, real-world applications, advantages, limitations, and future directions.
