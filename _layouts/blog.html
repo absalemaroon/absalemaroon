@@ -1,7 +1,20 @@
 ---
 layout: default
 ---
-<h1>{{ page.title }}</h1>
-<p>{{ page.date | date_to_string }} - {{ page.author }}</p>
 
-{{ content }}
+<article class="blog-article">
+  <header class="post-header">
+    <p class="post-kicker">Blog article</p>
+    <h1 class="post-title">{{ page.title }}</h1>
+    <p class="post-meta">
+      {% if page.date %}{{ page.date | date: "%B %-d, %Y" }}{% endif %}
+      {% if page.author %} · {{ page.author }}{% endif %}
+    </p>
+    {% if page.tags %}
+      <p class="blog-tags">{% for tag in page.tags %}<span>{{ tag }}</span>{% endfor %}</p>
+    {% endif %}
+  </header>
+  <div class="post-content">
+    {{ content }}
+  </div>
+</article>
