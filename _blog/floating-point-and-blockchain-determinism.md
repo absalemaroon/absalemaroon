@@ -57,6 +57,8 @@ The common answer is to avoid floating point in consensus-critical code and use 
 | Solidity | Fixed-point types can be declared but are not fully supported, and there are no usable floating-point types [[9]](https://docs.soliditylang.org/en/latest/types.html). |
 | WebAssembly-based platforms | Floating-point instructions are typically restricted or removed from the contract runtime to preserve determinism [[6]](https://arxiv.org/pdf/2504.16552). |
 
+![fixed point storage]({{ '/img/fixed-point-storage.svg' | relative_url }}){: width="700" }
+
 The pattern across these designs is consistent: the value `0.1` is never stored. An application stores a scaled integer and agrees, as a convention, where the decimal point sits. This is why token contracts commonly define 18 decimals and why a "balance" of 1.5 tokens is really the integer 1,500,000,000,000,000,000.
 
 > The practical rule of blockchain arithmetic is that a ledger stores integers, and decimals are a presentation layer on top of them.
