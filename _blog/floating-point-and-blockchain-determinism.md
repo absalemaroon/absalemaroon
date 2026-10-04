@@ -11,7 +11,7 @@ Most programmers meet `0.1 + 0.2 = 0.30000000000000004` as a curiosity. When I s
 
 ## The anomaly in brief
 
-The result comes from how numbers are stored, not from a defect in any language. A fraction has a finite representation in base *b* only if its reduced denominator is built from the prime factors of *b*. In base 10 the prime factors are 2 and 5, so 1/10 terminates as `0.1`. In base 2 the only prime factor is 2, so 1/10 (denominator 2 × 5) does not terminate:
+The result comes from how numbers are stored, not from a defect in any language. A fraction has a finite representation in base *b* only if its reduced denominator is built from the prime factors of *b*. In base 10 the prime factors are 2 and 5, so ⅒ terminates as `0.1`. In base 2 the only prime factor is 2, so ⅒ (denominator 2 × 5) does not terminate:
 
 ```text
 0.1 (decimal) = 0.0001100110011001100110011001100110011...  (binary, the block 0011 repeats forever)
@@ -20,7 +20,7 @@ The result comes from how numbers are stored, not from a defect in any language.
 The IEEE 754 binary64 format, commonly called double precision, stores a sign bit, an 11-bit exponent, and a 52-bit fraction. With the implicit leading 1 that gives 53 bits of significand precision. The infinite expansion of 0.1 must therefore be rounded, and the stored value is exactly:
 
 ```text
-3602879701896397 / 36028797018963968   (the denominator is 2^55)
+3602879701896397 / 36028797018963968   (the denominator is 2⁵⁵)
 ≈ 0.1000000000000000055511151231257827...
 ```
 
