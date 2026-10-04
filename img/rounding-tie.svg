@@ -28,7 +28,7 @@
   <text x="520" y="82" text-anchor="middle" font-size="15" fill="#111">selects this value</text>
 
   <line x1="160" y1="248" x2="640" y2="248" stroke="#444" stroke-width="1.5" marker-start="url(#arrow)" marker-end="url(#arrow)"/>
-  <text x="400" y="270" text-anchor="middle" font-size="14" fill="#444">Gap between adjacent doubles here = 2^-54 ≈ 5.55 × 10^-17</text>
+  <text x="400" y="270" text-anchor="middle" font-size="14" fill="#444">Gap between adjacent doubles here = 2⁻⁵⁵ ≈ 5.55 × 10⁻¹⁷</text>
 
   <text x="400" y="298" text-anchor="middle" font-size="14" font-style="italic" fill="#444">Printed result: 0.30000000000000004. The literal 0.3 is stored as the lower double.</text>
 </svg>
