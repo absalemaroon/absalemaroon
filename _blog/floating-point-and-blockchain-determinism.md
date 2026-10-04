@@ -33,6 +33,8 @@ There is a subtle point that matters for everything below. For basic operations 
 
 A blockchain can be understood as a replicated state machine. Schneider's classic treatment shows that replicas stay consistent only if they start from the same state and apply the same inputs in the same order through deterministic operations [[3]](https://www.cs.cornell.edu/fbs/publications/SMSurvey.pdf). Byzantine fault-tolerant protocols such as PBFT rest on the same assumption: correct replicas must produce identical results for the same request [[4]](https://pmg.csail.mit.edu/papers/osdi99.pdf).
 
+![Consensus Divergence]({{ '/img/consensus-divergence.svg' | relative_url }}){: width="700" }
+
 If honest nodes compute different results for the same transaction, the ledger forks. The designers of Hyperledger Fabric put this plainly: operations executed after ordering must be deterministic, or peers end up holding different state [[5]](https://arxiv.org/pdf/1801.10228). The same reasoning applies to public chains, where every validator re-executes transactions and compares resulting state.
 
 Floating-point arithmetic threatens this requirement in several ways, even though each individual IEEE 754 operation is well defined:
