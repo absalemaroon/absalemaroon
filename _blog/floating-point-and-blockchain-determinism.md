@@ -24,7 +24,7 @@ The IEEE 754 binary64 format, commonly called double precision, stores a sign bi
 ≈ 0.1000000000000000055511151231257827...
 ```
 
-The value stored for 0.2 is likewise slightly above the true 0.2. Their exact sum, about 0.3000000000000000166533, lies exactly halfway between two adjacent binary64 numbers. IEEE 754's default rule, round half to even, selects the upper one, which prints as `0.30000000000000004`. The literal `0.3` is stored as the lower neighbour, so the two are different doubles and the equality test fails [1](https://docs.oracle.com/cd/E19957-01/806-3568/ncg_goldberg.html)[2].
+The value stored for 0.2 is likewise slightly above the true 0.2. Their exact sum, about 0.3000000000000000166533, lies exactly halfway between two adjacent binary64 numbers. IEEE 754's default rule, round half to even, selects the upper one, which prints as `0.30000000000000004`. The literal `0.3` is stored as the lower neighbour, so the two are different doubles and the equality test fails [[1]](https://docs.oracle.com/cd/E19957-01/806-3568/ncg_goldberg.html)[2].
 
 There is a subtle point that matters for everything below. For basic operations such as addition, IEEE 754 requires a correctly rounded result, so on any conforming implementation `0.1 + 0.2` gives the same bits every time. The anomaly is therefore *deterministic*. The danger for distributed systems lies elsewhere.
 
