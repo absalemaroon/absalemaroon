@@ -35,7 +35,7 @@ Ready-to-copy templates are in the `_templates/` folder. Jekyll does not publish
 2. Use it in a post:
 
 ```markdown
-![Zero trust diagram](/img/zero-trust-diagram.png){: width="500" }
+![Alt text]({{ '/img/Alt file path' | relative_url }}){: width="700" }
 ```
 
 - Always start the path with `/img/`.
