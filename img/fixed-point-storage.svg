@@ -16,11 +16,11 @@
   <text x="660" y="82" text-anchor="middle" font-size="16" fill="#444">Stored on the ledger (uint256)</text>
   <text x="660" y="125" text-anchor="middle" font-size="17" font-weight="bold" font-family="Courier New, monospace" fill="#111">1500000000000000000</text>
 
-  <text x="400" y="86" text-anchor="middle" font-size="17" fill="#111">multiply by 10^18</text>
+  <text x="400" y="86" text-anchor="middle" font-size="17" fill="#111">multiply by 10¹⁸</text>
   <line x1="254" y1="98" x2="546" y2="98" stroke="#222" stroke-width="2" marker-end="url(#arrow)"/>
 
   <line x1="546" y1="124" x2="254" y2="124" stroke="#222" stroke-width="2" marker-end="url(#arrow)"/>
-  <text x="400" y="150" text-anchor="middle" font-size="17" fill="#111">divide by 10^18 (display only)</text>
+  <text x="400" y="150" text-anchor="middle" font-size="17" fill="#111">divide by 10¹⁸ (display only)</text>
 
   <text x="400" y="213" text-anchor="middle" font-size="16" fill="#111">The decimal point is a convention shared by the contract and the interface.</text>
   <text x="400" y="236" text-anchor="middle" font-size="16" fill="#111">The chain itself stores only the integer.</text>
